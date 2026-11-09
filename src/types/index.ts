@@ -11,6 +11,10 @@ export interface Project {
   techStack: string[];
   liveUrl?: string;
   urlLabel?: string;
+  secondaryUrl?: {
+    url: string;
+    label: string;
+  };
   architectureDetails?: {
     problem: string;
     solution: string;

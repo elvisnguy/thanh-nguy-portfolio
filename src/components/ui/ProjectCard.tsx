@@ -57,6 +57,20 @@ export function ProjectCard({ project, idx, onOpenDetails, playClick }: ProjectC
               <span>Deep Dive</span>
             </button>
 
+            {project.secondaryUrl && (
+              <a
+                href={project.secondaryUrl.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => playClick?.('tick')}
+                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-neutral-100 hover:bg-neutral-200 dark:bg-[#1a1a1a] dark:hover:bg-[#252525] text-neutral-700 dark:text-[#a3a3a3] hover:text-black dark:hover:text-white text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase transition-all border border-neutral-300 dark:border-[#2a2a2a] ios-press"
+                title={`Explore ${project.secondaryUrl.label}`}
+              >
+                <span>{project.secondaryUrl.label}</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </a>
+            )}
+
             {project.liveUrl && (
               <a
                 href={project.liveUrl}

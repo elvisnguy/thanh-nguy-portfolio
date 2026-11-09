@@ -150,23 +150,38 @@ export function ProjectModal({ project, onClose, playClick }: ProjectModalProps)
         </div>
 
         {/* Footer Actions */}
-        <div className="relative z-10 pt-4 border-t border-neutral-200/80 dark:border-white/10 flex items-center justify-between">
-          <span className="text-[11px] text-neutral-400 dark:text-[#666666] font-mono">
+        <div className="relative z-10 pt-4 border-t border-neutral-200/80 dark:border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <span className="text-[11px] text-neutral-400 dark:text-[#666666] font-mono hidden sm:inline">
             ESC or Click outside to dismiss
           </span>
 
-          {project.liveUrl && (
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => playClick?.('tick')}
-              className="sheen-glow inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-neutral-900 hover:bg-black dark:bg-white dark:hover:bg-neutral-100 text-white dark:text-black font-bold text-xs uppercase tracking-wider transition-all ios-press shadow-xl hover:shadow-2xl"
-            >
-              <span>{project.id === 'tech2b' || project.id === 'accountia' ? 'View Case Study' : 'View Live Showcase'}</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </a>
-          )}
+          <div className="flex flex-wrap items-center gap-2">
+            {project.secondaryUrl && (
+              <a
+                href={project.secondaryUrl.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => playClick?.('tick')}
+                className="inline-flex items-center gap-1.5 px-4 py-2 sm:px-4.5 sm:py-2.5 rounded-full bg-neutral-100 hover:bg-neutral-200 dark:bg-[#1f1f1f] dark:hover:bg-[#2a2a2a] text-neutral-800 dark:text-neutral-200 font-bold text-xs uppercase tracking-wider transition-all border border-neutral-300 dark:border-[#333333] ios-press"
+              >
+                <span>{project.secondaryUrl.label}</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </a>
+            )}
+
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => playClick?.('tick')}
+                className="sheen-glow inline-flex items-center gap-1.5 px-4.5 py-2 sm:px-5 sm:py-2.5 rounded-full bg-neutral-900 hover:bg-black dark:bg-white dark:hover:bg-neutral-100 text-white dark:text-black font-bold text-xs uppercase tracking-wider transition-all ios-press shadow-xl hover:shadow-2xl"
+              >
+                <span>{project.id === 'tech2b' ? 'View Case Study' : 'View Live Showcase'}</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </div>

@@ -122,8 +122,12 @@ export const PROJECTS: Project[] = [
     role: 'Key Frontend Developer / UI Library Owner',
     timeline: 'Oct 2023 - Sep 2026 (3 Years • Core Focus)',
     category: 'Enterprise Angular',
-    liveUrl: 'https://www.jurenites.com/portfolio/accountia',
-    urlLabel: 'Product Case Study',
+    liveUrl: 'https://accountia.no',
+    urlLabel: 'accountia.no',
+    secondaryUrl: {
+      url: 'https://www.jurenites.com/portfolio/accountia',
+      label: 'Design Case Study'
+    },
     techStack: ['Angular 19', 'Signals', 'Standalone Components', 'RxJS', 'TypeScript', 'SCSS', 'Storybook', 'Cypress'],
     summary: 'Cloud ERP invoicing and accounting platform designed for multi-currency operations and complex general ledger bookkeeping workflows.',
     highlights: [
