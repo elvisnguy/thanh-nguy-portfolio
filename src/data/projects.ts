@@ -67,6 +67,8 @@ export const PROJECTS: Project[] = [
     teamSize: '10–15',
     category: 'React & Next.js',
     featured: true,
+    liveUrl: 'https://www.layerlicensing.com/',
+    urlLabel: 'layerlicensing.com',
     techStack: ['Next.js (React)', 'TypeScript', 'TailwindCSS', 'Redux Toolkit', 'MUI X DataGrid Pro', 'Auth0', 'Chart.js', 'Storybook', 'Cypress'],
     summary: 'A premier commercial matchmaking platform connecting esports organizations, game titles, and global sponsors to negotiate multi-tier sponsorship contracts.',
     highlights: [
