@@ -12,38 +12,29 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project, idx, onOpenDetails, playClick }: ProjectCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
-  const [mousePos, setMousePos] = useState<{ x: number; y: number } | null>(null);
-  const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
-    setMousePos({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    cardRef.current.style.setProperty('--mouse-x', `${x}px`);
+    cardRef.current.style.setProperty('--mouse-y', `${y}px`);
   };
 
   return (
     <div 
       ref={cardRef}
       onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => {
-        setIsHovered(false);
-        setMousePos(null);
-      }}
       className="group relative p-5 sm:p-7 md:p-8 rounded-2xl bg-white/70 dark:bg-[#121212]/90 backdrop-blur-md border border-neutral-200 dark:border-[#222222] hover:border-neutral-400 dark:hover:border-neutral-500/80 transition-all duration-300 flex flex-col justify-between hover:shadow-2xl hover:shadow-black/5 dark:hover:shadow-white/[0.03] overflow-hidden ios-press-sm"
     >
-      {/* iOS Spotlight Specular Radial Highlight */}
-      {isHovered && mousePos && (
-        <div 
-          className="pointer-events-none absolute -inset-px transition-opacity duration-300 opacity-100"
-          style={{
-            background: `radial-gradient(450px circle at ${mousePos.x}px ${mousePos.y}px, rgba(255, 255, 255, 0.12), transparent 70%)`
-          }}
-        />
-      )}
+      {/* iOS Spotlight Specular Radial Highlight via CSS Custom Properties (Zero React re-renders) */}
+      <div 
+        className="pointer-events-none absolute -inset-px transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+        style={{
+          background: `radial-gradient(450px circle at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(255, 255, 255, 0.12), transparent 70%)`
+        }}
+      />
 
       <div className="relative z-10">
         {/* Top Category & Action Buttons Bar */}

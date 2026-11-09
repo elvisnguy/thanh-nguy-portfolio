@@ -11,13 +11,24 @@ export function useSoundEffects() {
 
   const toggleSound = () => setSoundEnabled(prev => !prev);
 
-  // Synthesize pleasant, crisp mechanical audio without external mp3 files
+  // Synthesize pleasant, crisp mechanical audio with shared AudioContext
+  let sharedAudioCtx: AudioContext | null = null;
+  const getAudioContext = () => {
+    if (!sharedAudioCtx) {
+      const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
+      if (AudioCtx) sharedAudioCtx = new AudioCtx();
+    }
+    if (sharedAudioCtx && sharedAudioCtx.state === 'suspended') {
+      sharedAudioCtx.resume();
+    }
+    return sharedAudioCtx;
+  };
+
   const playClick = (type: 'tick' | 'pop' | 'success' = 'tick') => {
     if (!soundEnabled) return;
     try {
-      const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
-      if (!AudioCtx) return;
-      const ctx = new AudioCtx();
+      const ctx = getAudioContext();
+      if (!ctx) return;
       const osc = ctx.createOscillator();
       const gain = ctx.createGain();
 
