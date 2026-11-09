@@ -287,8 +287,8 @@ export default function App() {
           </div>
         </div>
 
-        {/* Project Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+        {/* Project Cards Grid - 1 col on mobile and tablet (md), 2 cols on desktop (lg) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6">
           {filteredProjects.map((project, idx) => (
             <div 
               key={project.id}
@@ -301,7 +301,7 @@ export default function App() {
                     <span className="text-[10px] font-mono tracking-widest text-[#737373] uppercase">
                       0{idx + 1} / {project.category}
                     </span>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-white transition-colors mt-1 tracking-tight break-words">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-white transition-colors mt-1 tracking-tight break-normal">
                       {project.title}
                     </h3>
                     <p className="text-xs text-[#888888] font-medium mt-1">
