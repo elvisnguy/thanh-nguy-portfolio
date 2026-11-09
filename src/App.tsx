@@ -4,21 +4,16 @@ import {
   Mail, 
   Phone, 
   MapPin, 
-  CheckCircle2, 
   ExternalLink,
   FileDown,
   FileText,
   Copy,
   Check,
-  Code2,
-  Sparkles,
-  ArrowUpRight,
-  Terminal,
-  Layers,
   Cpu,
   GraduationCap,
   Briefcase,
-  ChevronRight
+  ChevronRight,
+  FolderGit2
 } from 'lucide-react';
 import { PROJECTS, SKILL_CATEGORIES } from './data/projects';
 
