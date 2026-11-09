@@ -38,7 +38,7 @@ export function HeroSection({ playClick }: HeroSectionProps) {
         <div className="space-y-3 sm:space-y-4">
           <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold tracking-[-0.04em] leading-[1.08] text-neutral-900 dark:text-white">
             NGUY VAN THANH. <br />
-            <span className="text-neutral-500 dark:text-[#999999]">FRONTEND ARCHITECTURE.</span>
+            <span className="text-neutral-400 dark:text-[#999999]">FRONTEND ARCHITECTURE.</span>
           </h1>
 
           <p className="text-sm sm:text-base md:text-xl text-neutral-600 dark:text-[#a3a3a3] leading-relaxed max-w-2xl font-light">
@@ -56,12 +56,12 @@ export function HeroSection({ playClick }: HeroSectionProps) {
           ].map((metric, i) => (
             <div 
               key={i} 
-              className="p-3.5 sm:p-5 rounded-2xl bg-white/70 dark:bg-[#141414]/90 backdrop-blur-md border border-neutral-200 dark:border-[#222222] hover:border-neutral-400 dark:hover:border-white/40 transition-all duration-300 ios-press-sm hover:shadow-xl hover:shadow-black/5 dark:hover:shadow-white/[0.02]"
+              className="p-3.5 sm:p-5 rounded-2xl bg-white dark:bg-[#141414]/90 backdrop-blur-md border border-neutral-200/90 dark:border-[#222222] hover:border-neutral-400 dark:hover:border-white/40 transition-all duration-300 ios-press-sm shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-none hover:shadow-xl hover:shadow-black/5 dark:hover:shadow-white/[0.02]"
             >
               <div className="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight text-neutral-900 dark:text-white">
                 {metric.val}
               </div>
-              <div className="text-[9px] sm:text-[10px] text-neutral-600 dark:text-[#a3a3a3] font-semibold mt-1 tracking-wider uppercase">
+              <div className="text-[9px] sm:text-[10px] text-neutral-500 dark:text-[#a3a3a3] font-semibold mt-1 tracking-wider uppercase">
                 {metric.label}
               </div>
             </div>

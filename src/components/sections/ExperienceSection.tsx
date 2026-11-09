@@ -19,7 +19,7 @@ export function ExperienceSection() {
           {/* EZTEK */}
           <div className="relative">
             <span className="absolute -left-[27px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-neutral-900 dark:bg-white border-4 border-white dark:border-[#0d0d0d]" />
-            <div className="p-5 sm:p-7 rounded-2xl bg-white/80 dark:bg-[#121212]/90 backdrop-blur-md border border-neutral-200 dark:border-[#222222] hover:border-neutral-400 dark:hover:border-white/30 transition-all duration-300 shadow-sm">
+            <div className="p-5 sm:p-7 rounded-2xl bg-white dark:bg-[#121212]/90 backdrop-blur-md border border-neutral-200/90 dark:border-[#222222] hover:border-neutral-400 dark:hover:border-white/30 transition-all duration-300 shadow-[0_2px_12px_rgba(0,0,0,0.04)] dark:shadow-none">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-2 mb-2">
                 <h3 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-white tracking-tight">
                   EZTEK &bull; Frontend Engineer
@@ -45,7 +45,7 @@ export function ExperienceSection() {
           {/* Independent Contracts */}
           <div className="relative">
             <span className="absolute -left-[27px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-neutral-400 dark:bg-[#737373] border-4 border-white dark:border-[#0d0d0d]" />
-            <div className="p-5 sm:p-7 rounded-2xl bg-white/80 dark:bg-[#121212]/90 backdrop-blur-md border border-neutral-200 dark:border-[#222222] hover:border-neutral-400 dark:hover:border-white/30 transition-all duration-300 shadow-sm">
+            <div className="p-5 sm:p-7 rounded-2xl bg-white dark:bg-[#121212]/90 backdrop-blur-md border border-neutral-200/90 dark:border-[#222222] hover:border-neutral-400 dark:hover:border-white/30 transition-all duration-300 shadow-[0_2px_12px_rgba(0,0,0,0.04)] dark:shadow-none">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-2 mb-2">
                 <h3 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-white tracking-tight">
                   National & Higher Education Contracts
@@ -66,7 +66,7 @@ export function ExperienceSection() {
           {/* HighscoresAI */}
           <div className="relative">
             <span className="absolute -left-[27px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-emerald-500 border-4 border-white dark:border-[#0d0d0d] animate-pulse" />
-            <div className="p-5 sm:p-7 rounded-2xl bg-white/80 dark:bg-[#121212]/90 backdrop-blur-md border border-neutral-200 dark:border-[#222222] hover:border-neutral-400 dark:hover:border-white/30 transition-all duration-300 shadow-sm">
+            <div className="p-5 sm:p-7 rounded-2xl bg-white dark:bg-[#121212]/90 backdrop-blur-md border border-neutral-200/90 dark:border-[#222222] hover:border-neutral-400 dark:hover:border-white/30 transition-all duration-300 shadow-[0_2px_12px_rgba(0,0,0,0.04)] dark:shadow-none">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-2 mb-2">
                 <h3 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-white tracking-tight">
                   HighscoresAI &bull; Test Prep Platform
@@ -86,7 +86,7 @@ export function ExperienceSection() {
       {/* Education & Language */}
       <section className="py-16 sm:py-20 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto border-t border-neutral-200 dark:border-[#1f1f1f]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
-          <div className="p-5 sm:p-7 rounded-2xl bg-white/80 dark:bg-[#121212]/90 backdrop-blur-md border border-neutral-200 dark:border-[#222222] hover:border-neutral-400 dark:hover:border-white/30 transition-all duration-300 ios-press-sm shadow-sm">
+          <div className="p-5 sm:p-7 rounded-2xl bg-white dark:bg-[#121212]/90 backdrop-blur-md border border-neutral-200/90 dark:border-[#222222] hover:border-neutral-400 dark:hover:border-white/30 transition-all duration-300 ios-press-sm shadow-[0_2px_12px_rgba(0,0,0,0.04)] dark:shadow-none">
             <div className="text-[10px] font-mono tracking-widest text-neutral-600 dark:text-[#a3a3a3] uppercase mb-1.5">
               Academic Background
             </div>
@@ -97,7 +97,7 @@ export function ExperienceSection() {
             </p>
           </div>
 
-          <div className="p-5 sm:p-7 rounded-2xl bg-white/80 dark:bg-[#121212]/90 backdrop-blur-md border border-neutral-200 dark:border-[#222222] hover:border-neutral-400 dark:hover:border-white/30 transition-all duration-300 ios-press-sm shadow-sm">
+          <div className="p-5 sm:p-7 rounded-2xl bg-white dark:bg-[#121212]/90 backdrop-blur-md border border-neutral-200/90 dark:border-[#222222] hover:border-neutral-400 dark:hover:border-white/30 transition-all duration-300 ios-press-sm shadow-[0_2px_12px_rgba(0,0,0,0.04)] dark:shadow-none">
             <div className="text-[10px] font-mono tracking-widest text-neutral-600 dark:text-[#a3a3a3] uppercase mb-1.5">
               Global Communication
             </div>

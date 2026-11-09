@@ -30,7 +30,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className={`min-h-screen bg-slate-50 dark:bg-[#0d0d0d] text-neutral-900 dark:text-[#e5e5e5] relative selection:bg-neutral-300 dark:selection:bg-neutral-800 selection:text-black dark:selection:text-white font-sans transition-colors duration-300 ${mounted ? 'opacity-100' : 'opacity-0'}`}>
+    <div className={`min-h-screen bg-[#f8f9fa] dark:bg-[#0d0d0d] text-neutral-900 dark:text-[#e5e5e5] relative selection:bg-neutral-900 selection:text-white dark:selection:bg-neutral-800 dark:selection:text-white font-sans transition-colors duration-300 ${mounted ? 'opacity-100' : 'opacity-0'}`}>
       
       {/* Background Lighting Mesh */}
       <AmbientGlow />

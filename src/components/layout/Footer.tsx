@@ -9,7 +9,7 @@ interface FooterProps {
 export function Footer({ playClick }: FooterProps) {
   return (
     <footer id="contact" className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto border-t border-neutral-200 dark:border-[#222222]">
-      <div className="p-6 sm:p-10 md:p-14 rounded-3xl bg-neutral-50 dark:bg-[#121212]/95 backdrop-blur-xl border border-neutral-200 dark:border-white/10 text-center max-w-2xl mx-auto shadow-2xl relative overflow-hidden">
+      <div className="p-6 sm:p-10 md:p-14 rounded-3xl bg-white dark:bg-[#121212]/95 backdrop-blur-xl border border-neutral-200/90 dark:border-white/10 text-center max-w-2xl mx-auto shadow-[0_4px_24px_rgba(0,0,0,0.06)] dark:shadow-2xl relative overflow-hidden">
         <h2 className="text-2xl sm:text-4xl font-extrabold text-neutral-900 dark:text-white tracking-tight mb-2 sm:mb-3">
           Get in Touch
         </h2>

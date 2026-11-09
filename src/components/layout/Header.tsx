@@ -44,8 +44,8 @@ export function Header({
 
       <div className={`mx-auto transition-all duration-300 ${
         scrolled 
-          ? 'max-w-5xl rounded-full bg-white/80 dark:bg-[#121212]/80 backdrop-blur-2xl border border-neutral-300/80 dark:border-white/10 shadow-2xl shadow-black/10 dark:shadow-black/80 px-4 sm:px-6 py-2' 
-          : 'max-w-6xl px-4 sm:px-6 md:px-8 py-3.5 sm:py-4 bg-white/85 dark:bg-[#0d0d0d]/85 backdrop-blur-xl border-b border-neutral-200 dark:border-[#222222]'
+          ? 'max-w-5xl rounded-full bg-white/90 dark:bg-[#121212]/80 backdrop-blur-2xl border border-neutral-200/90 dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:shadow-black/80 px-4 sm:px-6 py-2' 
+          : 'max-w-6xl px-4 sm:px-6 md:px-8 py-3.5 sm:py-4 bg-[#f8f9fa]/90 dark:bg-[#0d0d0d]/85 backdrop-blur-xl border-b border-neutral-200/80 dark:border-[#222222]'
       } flex items-center justify-between`}>
         
         {/* Brand Logo */}
