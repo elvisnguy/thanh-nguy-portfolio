@@ -46,28 +46,20 @@ export function ProjectCard({ project, idx, onOpenDetails, playClick }: ProjectC
       )}
 
       <div className="relative z-10">
-        {/* Responsive Card Header */}
-        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-4 mb-4">
-          <div className="min-w-0 flex-1">
-            <span className="text-[10px] font-mono tracking-widest text-neutral-500 dark:text-[#737373] uppercase">
-              0{idx + 1} / {project.category}
-            </span>
-            <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors mt-1 tracking-tight break-normal">
-              {project.title}
-            </h3>
-            <p className="text-xs text-neutral-600 dark:text-[#888888] font-medium mt-1">
-              {project.role} &bull; <span className="text-neutral-800 dark:text-[#b5b5b5]">{project.timeline}</span>
-            </p>
-          </div>
+        {/* Top Category & Action Buttons Bar */}
+        <div className="flex items-center justify-between gap-3 mb-3">
+          <span className="text-[10px] font-mono tracking-widest text-neutral-500 dark:text-[#737373] uppercase">
+            0{idx + 1} / {project.category}
+          </span>
 
-          <div className="flex items-center gap-2 self-start sm:self-auto shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             {/* Quick Deep-Dive Button */}
             <button
               onClick={() => {
                 playClick?.('pop');
                 onOpenDetails(project);
               }}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-neutral-100 hover:bg-neutral-200 dark:bg-[#1c1c1c] dark:hover:bg-neutral-800 text-neutral-700 dark:text-[#a3a3a3] hover:text-black dark:hover:text-white text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase transition-all border border-neutral-300 dark:border-[#2a2a2a] ios-press"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-neutral-100 hover:bg-neutral-200 dark:bg-[#1c1c1c] dark:hover:bg-neutral-800 text-neutral-700 dark:text-[#a3a3a3] hover:text-black dark:hover:text-white text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase transition-all border border-neutral-300 dark:border-[#2a2a2a] ios-press"
               title="Architecture Deep-Dive"
             >
               <Layers className="w-3 h-3 text-neutral-500 dark:text-neutral-400" />
@@ -80,7 +72,7 @@ export function ProjectCard({ project, idx, onOpenDetails, playClick }: ProjectC
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => playClick?.('tick')}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-neutral-900 hover:bg-black dark:bg-[#1c1c1c] dark:hover:bg-white text-white dark:text-[#a3a3a3] dark:hover:text-black text-[10px] sm:text-[11px] font-bold tracking-wider uppercase transition-all border border-neutral-800 dark:border-[#2a2a2a] dark:hover:border-white shadow-sm ios-press"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-neutral-900 hover:bg-black dark:bg-[#1c1c1c] dark:hover:bg-white text-white dark:text-[#a3a3a3] dark:hover:text-black text-[10px] sm:text-[11px] font-bold tracking-wider uppercase transition-all border border-neutral-800 dark:border-[#2a2a2a] dark:hover:border-white shadow-sm ios-press"
                 title={`Visit ${project.urlLabel || 'Live Site'}`}
               >
                 <span>{project.urlLabel || 'Live'}</span>
@@ -88,6 +80,16 @@ export function ProjectCard({ project, idx, onOpenDetails, playClick }: ProjectC
               </a>
             )}
           </div>
+        </div>
+
+        {/* Full-width Title Header: Luôn thẳng tắp trên 1 hàng (trừ khi màn hình quá hẹp mới xuống) */}
+        <div className="mb-4">
+          <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors tracking-tight leading-snug">
+            {project.title}
+          </h3>
+          <p className="text-xs text-neutral-600 dark:text-[#888888] font-medium mt-1">
+            {project.role} &bull; <span className="text-neutral-800 dark:text-[#b5b5b5]">{project.timeline}</span>
+          </p>
         </div>
 
         <p className="text-neutral-600 dark:text-[#a3a3a3] text-xs sm:text-sm leading-relaxed mb-5 font-light">
