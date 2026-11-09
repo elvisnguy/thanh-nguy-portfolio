@@ -16,6 +16,7 @@ import {
   ArrowUpRight,
   Sparkles
 } from 'lucide-react';
+import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
 import { PROJECTS, SKILL_GROUPS, TECH_MAP } from './data/projects';
 
 export default function App() {
@@ -87,7 +88,18 @@ export default function App() {
             <a href="#experience" className="hover:text-white transition-colors">History</a>
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5">
+            <a 
+              href="https://www.linkedin.com/in/thanh-n-345518369/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#0077b5]/15 hover:bg-[#0077b5]/25 border border-[#0077b5]/40 text-[#38bdf8] hover:text-white font-medium text-xs transition-all tracking-wide"
+              title="Connect on LinkedIn"
+            >
+              <FaLinkedinIn className="w-3.5 h-3.5 text-[#0077b5]" />
+              <span className="hidden sm:inline">LinkedIn</span>
+            </a>
+
             <a 
               href="/Thanh_Nguy_CV.pdf" 
               target="_blank"
@@ -97,11 +109,12 @@ export default function App() {
               <FileText className="w-3.5 h-3.5" />
               <span>Resume PDF</span>
             </a>
+
             <a 
               href="#contact" 
-              className="hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white text-black font-bold text-xs hover:bg-[#e5e5e5] transition-all tracking-wide"
+              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white text-black font-bold text-xs hover:bg-[#e5e5e5] transition-all tracking-wide shadow-md hover:scale-105"
             >
-              <span>Contact</span>
+              <span>Get in Touch</span>
             </a>
           </div>
         </div>
@@ -153,8 +166,18 @@ export default function App() {
           {/* CTAs */}
           <div className="flex flex-wrap items-center gap-3 pt-2 animate-intro-delay-3">
             <a
+              href="https://www.linkedin.com/in/thanh-n-345518369/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0077b5] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#006396] transition-all hover:scale-105 shadow-lg shadow-[#0077b5]/25"
+            >
+              <FaLinkedinIn className="w-4 h-4 text-white" />
+              <span>Connect on LinkedIn</span>
+            </a>
+
+            <a
               href="#projects"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-bold text-xs uppercase tracking-wider hover:bg-[#d4d4d4] transition-all hover:scale-105"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white text-black font-bold text-xs uppercase tracking-wider hover:bg-[#d4d4d4] transition-all hover:scale-105"
             >
               <span>Explore Projects</span>
               <ChevronRight className="w-3.5 h-3.5" />
@@ -457,6 +480,16 @@ export default function App() {
           </p>
 
           <div className="flex flex-wrap justify-center items-center gap-3">
+            <a
+              href="https://www.linkedin.com/in/thanh-n-345518369/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#0077b5] hover:bg-[#006396] text-white font-bold text-xs uppercase tracking-wider transition-all hover:scale-105 shadow-lg shadow-[#0077b5]/30"
+            >
+              <FaLinkedinIn className="w-4 h-4 text-white" />
+              <span>Connect on LinkedIn</span>
+            </a>
+
             <a
               href="mailto:vanthanhnguy2907@gmail.com"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white text-black font-bold text-xs uppercase tracking-wider hover:bg-[#d4d4d4] transition-all hover:scale-105"
