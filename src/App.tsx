@@ -12,7 +12,8 @@ import {
   FolderGit2, 
   ArrowUpRight, 
   Menu, 
-  X
+  X,
+  ArrowUp
 } from 'lucide-react';
 import { FaLinkedinIn } from 'react-icons/fa';
 import { PROJECTS, SKILL_GROUPS, TECH_MAP } from './data/projects';
@@ -623,6 +624,18 @@ export default function App() {
           &copy; {new Date().getFullYear()} Thanh Nguy. All rights reserved.
         </div>
       </footer>
+
+      {/* iOS Floating Back to Top Button */}
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        aria-label="Back to Top"
+        className={`fixed bottom-6 right-6 z-40 p-3 sm:p-3.5 rounded-full bg-[#161616]/85 backdrop-blur-xl border border-white/15 text-[#a3a3a3] hover:text-white hover:bg-white hover:text-black shadow-2xl shadow-black/80 transition-all duration-300 ios-press ${
+          scrolled ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 pointer-events-none translate-y-4 scale-90'
+        }`}
+        title="Scroll to Top"
+      >
+        <ArrowUp className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.5]" />
+      </button>
     </div>
   );
 }
