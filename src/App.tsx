@@ -121,11 +121,11 @@ export default function App() {
 
             {/* Direct CV Download buttons */}
             <a
-              href="/cv.html"
+              href="/Thanh_Nguy_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-indigo-700/60 text-indigo-300 hover:text-white font-semibold text-sm transition-all shadow-md"
-              title="View & Save PDF CV"
+              title="View Real PDF CV"
             >
               <FileText className="w-4 h-4 text-indigo-400" />
               <span>View PDF CV</span>
