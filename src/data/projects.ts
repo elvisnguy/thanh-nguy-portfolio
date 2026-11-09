@@ -1,3 +1,89 @@
+import { 
+  SiAngular, 
+  SiReact, 
+  SiNextdotjs, 
+  SiTypescript, 
+  SiJavascript, 
+  SiTailwindcss, 
+  SiSass, 
+  SiRedux, 
+  SiPhp, 
+  SiLaravel, 
+  SiStorybook, 
+  SiCypress, 
+  SiJest, 
+  SiNodedotjs, 
+  SiGit, 
+  SiFigma
+} from 'react-icons/si';
+import { TbTopologyStar3, TbCpu, TbRobot } from 'react-icons/tb';
+
+export interface SkillItem {
+  name: string;
+  icon?: any;
+  color?: string;
+}
+
+export interface SkillGroup {
+  name: string;
+  skills: SkillItem[];
+}
+
+export const SKILL_GROUPS: SkillGroup[] = [
+  {
+    name: 'Frontend Core & Frameworks',
+    skills: [
+      { name: 'Angular (v15 - v19)', icon: SiAngular, color: '#dd0031' },
+      { name: 'Angular Signals', icon: SiAngular, color: '#f43f5e' },
+      { name: 'Angular Universal (SSR)', icon: SiAngular, color: '#e11d48' },
+      { name: 'React', icon: SiReact, color: '#61dafb' },
+      { name: 'Next.js (App Router)', icon: SiNextdotjs, color: '#ffffff' },
+      { name: 'TypeScript', icon: SiTypescript, color: '#3178c6' },
+      { name: 'JavaScript (ES6+)', icon: SiJavascript, color: '#f7df1e' },
+      { name: 'TailwindCSS', icon: SiTailwindcss, color: '#38bdf8' },
+      { name: 'HTML5 / SCSS', icon: SiSass, color: '#cf649a' },
+    ]
+  },
+  {
+    name: 'State & Reactivity',
+    skills: [
+      { name: 'Angular Signals', icon: TbTopologyStar3, color: '#ec4899' },
+      { name: 'RxJS (Fine-tuned)', icon: TbTopologyStar3, color: '#d946ef' },
+      { name: 'Redux Toolkit', icon: SiRedux, color: '#764abc' },
+      { name: 'Context API', icon: SiReact, color: '#61dafb' },
+      { name: 'Memory Lifecycle Optimization', icon: TbCpu, color: '#10b981' }
+    ]
+  },
+  {
+    name: 'Architecture & UI Tooling',
+    skills: [
+      { name: 'UI Component Libraries', icon: SiStorybook, color: '#ff4785' },
+      { name: 'Storybook', icon: SiStorybook, color: '#ff4785' },
+      { name: 'Figma-to-Code Pixel-Perfect', icon: SiFigma, color: '#a259ff' },
+      { name: 'MUI X DataGrid Pro', icon: SiReact, color: '#007fff' },
+      { name: 'Angular Material', icon: SiAngular, color: '#e11d48' }
+    ]
+  },
+  {
+    name: 'Backend & CMS Integration',
+    skills: [
+      { name: 'PHP (Laravel CMS)', icon: SiLaravel, color: '#ff2d20' },
+      { name: 'Blade Templates', icon: SiPhp, color: '#777bb4' },
+      { name: 'RESTful API Integration', icon: TbTopologyStar3, color: '#06b6d4' },
+      { name: 'Node.js basics', icon: SiNodedotjs, color: '#68a063' }
+    ]
+  },
+  {
+    name: 'Testing & Workflows',
+    skills: [
+      { name: 'Cypress (E2E Testing)', icon: SiCypress, color: '#17202c' },
+      { name: 'Jest / Karma', icon: SiJest, color: '#c21325' },
+      { name: 'Git Worktrees', icon: SiGit, color: '#f05032' },
+      { name: 'AI-Augmented Engineering', icon: TbRobot, color: '#10a37f' }
+    ]
+  }
+];
+
 export interface Project {
   id: string;
   title: string;
@@ -139,28 +225,5 @@ export const PROJECTS: Project[] = [
       'Created HTTP interceptors for JWT token handling, caching, and unified API error handling.'
     ],
     metrics: ['Autodesk Case Study', 'Angular Universal (SSR)', 'SEO Latency -35%']
-  }
-];
-
-export const SKILL_CATEGORIES = [
-  {
-    name: 'Frontend Core & Frameworks',
-    skills: ['Angular (v15 - v19)', 'Angular Signals', 'Angular Universal (SSR)', 'React', 'Next.js (App Router)', 'TypeScript', 'JavaScript (ES6+)', 'HTML5 / SCSS', 'TailwindCSS']
-  },
-  {
-    name: 'State & Reactivity',
-    skills: ['RxJS (Fine-tuned)', 'Angular Signals', 'Redux Toolkit', 'Context API', 'Memory Lifecycle Optimization']
-  },
-  {
-    name: 'Architecture & UI Tooling',
-    skills: ['UI Component Libraries', 'Storybook', 'Figma-to-Code Pixel-Perfect', 'MUI X DataGrid Pro', 'Angular Material']
-  },
-  {
-    name: 'Backend & CMS Integration',
-    skills: ['PHP (Laravel CMS)', 'Blade Templates', 'RESTful API Integration', 'Server-Side DataTables', 'Node.js basics', 'Auth0']
-  },
-  {
-    name: 'Testing & Workflows',
-    skills: ['Cypress (E2E Testing)', 'Jest / Karma', 'Git Worktrees', 'Agile / Scrum', 'EU Remote Collaboration']
   }
 ];

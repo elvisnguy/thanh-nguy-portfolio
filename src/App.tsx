@@ -3,7 +3,6 @@ import {
   Globe, 
   Mail, 
   Phone, 
-  MapPin, 
   ExternalLink,
   FileDown,
   FileText,
@@ -14,17 +13,24 @@ import {
   Briefcase,
   ChevronRight,
   FolderGit2,
-  ArrowUpRight
+  ArrowUpRight,
+  Sparkles
 } from 'lucide-react';
-import { PROJECTS, SKILL_CATEGORIES } from './data/projects';
+import { PROJECTS, SKILL_GROUPS } from './data/projects';
 
 export default function App() {
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [copiedText, setCopiedText] = useState<string | null>(null);
   const [mounted, setMounted] = useState<boolean>(false);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     setMounted(true);
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   const categories = ['All', 'Enterprise Angular', 'React & Next.js', 'Full-stack & CMS', 'Design Systems'];
@@ -42,18 +48,26 @@ export default function App() {
   return (
     <div className={`min-h-screen bg-[#0d0d0d] text-[#e5e5e5] relative selection:bg-white selection:text-black font-sans transition-opacity duration-1000 ${mounted ? 'opacity-100' : 'opacity-0'}`}>
       
-      {/* Editorial Minimalist Ambient Lighting (BigHit Monochromatic Dark Tone) */}
+      {/* Interactive Cursor Spotlight Glow (Sáng sủa, hiện đại theo chuột) */}
+      <div 
+        className="pointer-events-none fixed -inset-px z-30 transition-opacity duration-300 opacity-70 hidden md:block"
+        style={{
+          background: `radial-gradient(650px circle at ${mousePos.x}px ${mousePos.y}px, rgba(255,255,255,0.06), transparent 80%)`
+        }}
+      />
+
+      {/* Subtle Background Lighting Mesh */}
       <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-        {/* Subtle monochrome vignette */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1400px] h-[550px] bg-gradient-to-b from-white/[0.04] via-transparent to-transparent blur-[140px]" />
-        <div className="absolute top-[45%] right-0 w-[500px] h-[500px] bg-white/[0.02] blur-[160px] rounded-full" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[500px] bg-gradient-to-b from-white/[0.05] via-transparent to-transparent blur-[140px]" />
+        <div className="absolute top-[40%] -left-[100px] w-[500px] h-[500px] bg-indigo-500/[0.04] blur-[160px] rounded-full" />
+        <div className="absolute top-[70%] -right-[100px] w-[600px] h-[600px] bg-sky-500/[0.04] blur-[160px] rounded-full" />
       </div>
 
-      {/* BigHit Music Inspired Sleek Header */}
+      {/* Header Bar */}
       <header className="sticky top-0 z-50 backdrop-blur-xl bg-[#0d0d0d]/85 border-b border-[#222222] transition-all">
         <div className="max-w-6xl mx-auto px-5 sm:px-8 h-18 py-4 flex items-center justify-between">
           <a href="#" className="flex items-center gap-3 group">
-            <span className="w-8 h-8 rounded-lg bg-white text-black font-extrabold text-xs flex items-center justify-center tracking-tighter group-hover:scale-105 transition-transform">
+            <span className="w-8 h-8 rounded-lg bg-white text-black font-extrabold text-xs flex items-center justify-center tracking-tighter group-hover:scale-110 transition-transform shadow-md">
               TN
             </span>
             <div className="flex flex-col">
@@ -69,7 +83,7 @@ export default function App() {
           <nav className="hidden md:flex items-center gap-8 text-[11px] font-semibold tracking-widest uppercase text-[#888888]">
             <a href="#about" className="hover:text-white transition-colors">Overview</a>
             <a href="#projects" className="hover:text-white transition-colors">Projects</a>
-            <a href="#skills" className="hover:text-white transition-colors">Capabilities</a>
+            <a href="#skills" className="hover:text-white transition-colors">Stack</a>
             <a href="#experience" className="hover:text-white transition-colors">History</a>
           </nav>
 
@@ -93,16 +107,16 @@ export default function App() {
         </div>
       </header>
 
-      {/* Hero Section — Editorial Monospaced Staggered Fade-in */}
+      {/* Hero Section */}
       <section id="about" className="pt-24 pb-20 px-5 sm:px-8 max-w-6xl mx-auto">
         <div className="space-y-8 max-w-4xl">
-          {/* Subtle Stage Tag */}
+          {/* Status Badge */}
           <div className="inline-flex items-center gap-2.5 px-3.5 py-1 rounded-full border border-[#2a2a2a] bg-[#141414] text-[11px] font-medium tracking-widest uppercase text-[#a3a3a3] animate-intro">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             <span>Frontend Engineer &bull; 5 YOE &bull; Vietnam &bull; EU Remote</span>
           </div>
 
-          {/* Big Editorial Headline */}
+          {/* Headline */}
           <div className="space-y-4 animate-intro-delay-1">
             <h1 className="text-4xl sm:text-7xl font-extrabold tracking-[-0.04em] leading-[1.05] text-white">
               NGUY VAN THANH. <br />
@@ -114,7 +128,7 @@ export default function App() {
             </p>
           </div>
 
-          {/* Minimalist Metrics Grid */}
+          {/* Metrics Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 animate-intro-delay-2">
             {[
               { val: '5 YOE', label: 'Commercial Experience' },
@@ -136,7 +150,7 @@ export default function App() {
             ))}
           </div>
 
-          {/* Quick Action Buttons */}
+          {/* CTAs */}
           <div className="flex flex-wrap items-center gap-3 pt-2 animate-intro-delay-3">
             <a
               href="#projects"
@@ -176,7 +190,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* Featured Projects Archive (BigHit Profile Grid Aesthetic) */}
+      {/* Featured Projects Archive */}
       <section id="projects" className="py-24 px-5 sm:px-8 max-w-6xl mx-auto border-t border-[#1f1f1f]">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-5">
           <div>
@@ -188,7 +202,6 @@ export default function App() {
             </h2>
           </div>
 
-          {/* Minimalist Filter Tabs */}
           <div className="flex flex-wrap items-center gap-2">
             {categories.map((cat) => (
               <button
@@ -206,12 +219,11 @@ export default function App() {
           </div>
         </div>
 
-        {/* BigHit Clean Card Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredProjects.map((project, idx) => (
             <div 
               key={project.id}
-              className="group p-7 sm:p-8 rounded-2xl bg-[#121212] border border-[#222222] hover:border-white transition-all duration-300 flex flex-col justify-between hover:shadow-2xl hover:shadow-white/[0.03]"
+              className="group p-7 sm:p-8 rounded-2xl bg-[#121212] border border-[#222222] hover:border-white transition-all duration-300 flex flex-col justify-between hover:shadow-2xl hover:shadow-white/[0.04]"
             >
               <div>
                 <div className="flex items-start justify-between gap-4 mb-4">
@@ -245,7 +257,6 @@ export default function App() {
                   {project.summary}
                 </p>
 
-                {/* Bullets */}
                 <div className="space-y-2.5 mb-7">
                   {project.highlights.map((item, hIdx) => (
                     <div key={hIdx} className="flex items-start gap-3 text-xs text-[#b0b0b0] leading-relaxed">
@@ -256,7 +267,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Bottom Tags */}
               <div className="pt-5 border-t border-[#1f1f1f] flex flex-wrap gap-1.5">
                 {project.techStack.map((tech, tIdx) => (
                   <span 
@@ -272,37 +282,50 @@ export default function App() {
         </div>
       </section>
 
-      {/* Capabilities Section */}
+      {/* Capabilities Section with Real Brand Logos */}
       <section id="skills" className="py-24 px-5 sm:px-8 max-w-6xl mx-auto border-t border-[#1f1f1f]">
         <div className="mb-12">
           <div className="text-[11px] font-bold tracking-widest uppercase text-[#737373] mb-2 flex items-center gap-2">
             <Cpu className="w-3.5 h-3.5" /> Technical Taxonomy
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-[-0.03em]">
-            Capabilities
+            Stack & Tooling
           </h2>
+          <p className="text-[#888888] text-sm mt-2 font-light">
+            Technologies and frameworks utilized across production enterprise engagements.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {SKILL_CATEGORIES.map((cat, idx) => (
+          {SKILL_GROUPS.map((group, idx) => (
             <div 
               key={idx}
-              className="p-7 rounded-2xl bg-[#121212] border border-[#222222] hover:border-[#383838] transition-all flex flex-col justify-between"
+              className="p-7 rounded-2xl bg-[#121212] border border-[#222222] hover:border-[#383838] transition-all flex flex-col justify-between group"
             >
               <div>
-                <h3 className="text-xs font-bold tracking-widest uppercase text-white mb-4 flex items-center gap-2">
+                <h3 className="text-xs font-bold tracking-widest uppercase text-white mb-5 flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-white" />
-                  {cat.name}
+                  {group.name}
                 </h3>
+
                 <div className="flex flex-wrap gap-2">
-                  {cat.skills.map((skill, sIdx) => (
-                    <span 
-                      key={sIdx}
-                      className="px-3 py-1.5 rounded-md bg-[#181818] border border-[#282828] text-xs font-medium text-[#c2c2c2] hover:text-white hover:border-[#4f4f4f] transition-colors"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+                  {group.skills.map((skill, sIdx) => {
+                    const IconComponent = skill.icon;
+                    return (
+                      <span 
+                        key={sIdx}
+                        className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#171717] hover:bg-[#202020] border border-[#262626] hover:border-[#404040] text-xs font-medium text-[#d4d4d4] hover:text-white transition-all group/item shadow-sm hover:scale-[1.02]"
+                      >
+                        {IconComponent && (
+                          <IconComponent 
+                            className="w-4 h-4 transition-transform group-hover/item:scale-110" 
+                            style={{ color: skill.color || '#ffffff' }}
+                          />
+                        )}
+                        <span>{skill.name}</span>
+                      </span>
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -413,7 +436,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* Monochromatic Dark Footer */}
+      {/* Footer */}
       <footer id="contact" className="py-24 px-5 sm:px-8 max-w-6xl mx-auto border-t border-[#222222]">
         <div className="p-10 sm:p-14 rounded-3xl bg-[#121212] border border-[#2a2a2a] text-center max-w-2xl mx-auto shadow-2xl relative overflow-hidden">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
