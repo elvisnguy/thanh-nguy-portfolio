@@ -97,7 +97,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'truc-hoc-lieu',
-    title: 'Trục Học Liệu Quốc Gia (giaoducso)',
+    title: 'Trục Học Liệu Quốc Gia',
     subtitle: 'National Educational Digital Resource Hub',
     role: 'Freelance CMS & Frontend Developer',
     timeline: 'Dec 2025 – May 2026',

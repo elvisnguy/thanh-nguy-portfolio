@@ -315,7 +315,7 @@ export default function App() {
               </div>
               <p className="text-xs text-purple-400 font-medium mb-3">National Scale & International Higher Education</p>
               <p className="text-slate-300 text-sm leading-relaxed mb-4">
-                Selected for specialized high-trust client implementations: developed administrative CMS dashboards for Vietnam's <strong>National Educational Resource Hub (giaoducso)</strong>, and translated rigorous British design systems into pixel-perfect templates for <strong>British University Vietnam (BUV)</strong>.
+                Selected for specialized high-trust client implementations: developed administrative CMS dashboards for Vietnam's <strong>National Educational Resource Hub (Trục Học Liệu Quốc Gia)</strong>, and translated rigorous British design systems into pixel-perfect templates for <strong>British University Vietnam (BUV)</strong>.
               </p>
             </div>
           </div>
