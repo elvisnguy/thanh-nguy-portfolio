@@ -38,7 +38,7 @@ export function HeroSection({ playClick }: HeroSectionProps) {
         <div className="space-y-3 sm:space-y-4">
           <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold tracking-[-0.04em] leading-[1.08] text-neutral-900 dark:text-white">
             NGUY VAN THANH. <br />
-            <span className="text-neutral-400 dark:text-[#666666]">FRONTEND ARCHITECTURE.</span>
+            <span className="text-neutral-500 dark:text-[#999999]">FRONTEND ARCHITECTURE.</span>
           </h1>
 
           <p className="text-sm sm:text-base md:text-xl text-neutral-600 dark:text-[#a3a3a3] leading-relaxed max-w-2xl font-light">
@@ -61,7 +61,7 @@ export function HeroSection({ playClick }: HeroSectionProps) {
               <div className="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight text-neutral-900 dark:text-white">
                 {metric.val}
               </div>
-              <div className="text-[9px] sm:text-[10px] text-neutral-500 dark:text-[#737373] font-semibold mt-1 tracking-wider uppercase">
+              <div className="text-[9px] sm:text-[10px] text-neutral-600 dark:text-[#a3a3a3] font-semibold mt-1 tracking-wider uppercase">
                 {metric.label}
               </div>
             </div>
@@ -77,7 +77,7 @@ export function HeroSection({ playClick }: HeroSectionProps) {
             onClick={() => playClick?.('tick')}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-[#0077b5] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#006396] transition-all shadow-lg shadow-[#0077b5]/25 ios-press"
           >
-            <FaLinkedinIn className="w-3.5 h-3.5 text-white" />
+            <FaLinkedinIn className="w-3.5 h-3.5 text-white" role="presentation" aria-hidden="true" />
             <span>Connect on LinkedIn</span>
           </a>
 

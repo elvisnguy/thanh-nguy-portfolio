@@ -61,14 +61,14 @@ export function Header({
             <span className="text-neutral-900 dark:text-white font-bold tracking-tight text-sm uppercase">
               Thanh Nguy
             </span>
-            <span className="text-[10px] text-neutral-500 dark:text-[#737373] tracking-wider uppercase font-medium">
+            <span className="text-[10px] text-neutral-600 dark:text-[#a3a3a3] tracking-wider uppercase font-medium">
               Portfolio / Archive
             </span>
           </div>
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-6 lg:gap-7 text-[11px] font-semibold tracking-widest uppercase text-neutral-500 dark:text-[#888888]">
+        <nav className="hidden md:flex items-center gap-6 lg:gap-7 text-[11px] font-semibold tracking-widest uppercase text-neutral-600 dark:text-[#a3a3a3]">
           <a href="#about" onClick={() => playClick?.('tick')} className="hover:text-black dark:hover:text-white transition-colors ios-press">Overview</a>
           <a href="#projects" onClick={() => playClick?.('tick')} className="hover:text-black dark:hover:text-white transition-colors ios-press">Projects</a>
           <a href="#skills" onClick={() => playClick?.('tick')} className="hover:text-black dark:hover:text-white transition-colors ios-press">Stack</a>
@@ -124,7 +124,7 @@ export function Header({
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#0077b5]/10 hover:bg-[#0077b5]/20 dark:bg-[#0077b5]/15 dark:hover:bg-[#0077b5]/25 border border-[#0077b5]/30 text-[#0077b5] dark:text-[#38bdf8] font-medium text-xs transition-all ios-press"
             title="Connect on LinkedIn"
           >
-            <FaLinkedinIn className="w-3.5 h-3.5 text-[#0077b5]" />
+            <FaLinkedinIn className="w-3.5 h-3.5 text-[#0077b5]" role="presentation" aria-hidden="true" />
             <span className="hidden sm:inline text-xs font-semibold">LinkedIn</span>
           </a>
 

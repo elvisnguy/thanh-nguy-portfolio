@@ -10,7 +10,7 @@ export function SkillsSection({ playClick }: SkillsSectionProps) {
   return (
     <section id="skills" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto border-t border-neutral-200 dark:border-[#1f1f1f]">
       <div className="mb-8 sm:mb-12">
-        <div className="text-[10px] sm:text-[11px] font-bold tracking-widest uppercase text-neutral-500 dark:text-[#737373] mb-1.5 sm:mb-2 flex items-center gap-2">
+        <div className="text-[10px] sm:text-[11px] font-bold tracking-widest uppercase text-neutral-600 dark:text-[#a3a3a3] mb-1.5 sm:mb-2 flex items-center gap-2">
           <Cpu className="w-3.5 h-3.5" /> Technical Taxonomy
         </div>
         <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-neutral-900 dark:text-white tracking-[-0.03em]">
@@ -46,6 +46,8 @@ export function SkillsSection({ playClick }: SkillsSectionProps) {
                         <IconComponent 
                           className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" 
                           style={{ color: skill.color || '#ffffff' }}
+                          role="presentation"
+                          aria-hidden="true"
                         />
                       )}
                       <span>{skill.name}</span>

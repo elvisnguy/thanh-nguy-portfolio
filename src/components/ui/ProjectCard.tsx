@@ -48,7 +48,7 @@ export function ProjectCard({ project, idx, onOpenDetails, playClick }: ProjectC
       <div className="relative z-10">
         {/* Top Category & Action Buttons Bar */}
         <div className="flex items-center justify-between gap-3 mb-3">
-          <span className="text-[10px] font-mono tracking-widest text-neutral-500 dark:text-[#737373] uppercase">
+          <span className="text-[10px] font-mono tracking-widest text-neutral-600 dark:text-[#a3a3a3] uppercase">
             0{idx + 1} / {project.category}
           </span>
 

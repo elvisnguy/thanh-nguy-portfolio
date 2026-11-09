@@ -20,6 +20,8 @@ export function TechBadge({ name, className = '', onClick }: TechBadgeProps) {
         <Icon 
           className="w-3.5 h-3.5 shrink-0" 
           style={{ color: meta.color || '#ffffff' }}
+          role="presentation"
+          aria-hidden="true"
         />
       )}
       <span>{name}</span>

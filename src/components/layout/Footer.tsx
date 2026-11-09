@@ -13,7 +13,7 @@ export function Footer({ playClick }: FooterProps) {
         <h2 className="text-2xl sm:text-4xl font-extrabold text-neutral-900 dark:text-white tracking-tight mb-2 sm:mb-3">
           Get in Touch
         </h2>
-        <p className="text-neutral-600 dark:text-[#888888] text-xs sm:text-sm leading-relaxed mb-6 sm:mb-8 max-w-md mx-auto font-light">
+        <p className="text-neutral-600 dark:text-[#a3a3a3] text-xs sm:text-sm leading-relaxed mb-6 sm:mb-8 max-w-md mx-auto font-light">
           Available for Frontend Engineer & Full-stack roles. Reach out via email, phone, or LinkedIn.
         </p>
 
@@ -25,7 +25,7 @@ export function Footer({ playClick }: FooterProps) {
             onClick={() => playClick?.('tick')}
             className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#0077b5] hover:bg-[#006396] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-[#0077b5]/30 ios-press"
           >
-            <FaLinkedinIn className="w-3.5 h-3.5 text-white" />
+            <FaLinkedinIn className="w-3.5 h-3.5 text-white" role="presentation" aria-hidden="true" />
             <span>LinkedIn</span>
           </a>
 
@@ -43,19 +43,19 @@ export function Footer({ playClick }: FooterProps) {
             onClick={() => playClick?.('tick')}
             className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-white dark:bg-[#1a1a1a] hover:bg-neutral-100 dark:hover:bg-[#262626] border border-neutral-300 dark:border-[#333333] hover:border-neutral-500 text-neutral-900 dark:text-white font-bold text-xs uppercase tracking-wider transition-all ios-press"
           >
-            <Phone className="w-4 h-4 text-neutral-500 dark:text-[#888888] shrink-0" />
+            <Phone className="w-4 h-4 text-neutral-600 dark:text-[#a3a3a3] shrink-0" />
             <span>(+84) 702 388 772</span>
           </a>
         </div>
 
-        <div className="mt-6 sm:mt-8 flex justify-center items-center gap-3 sm:gap-4 text-xs text-neutral-400 dark:text-[#525252] font-mono">
+        <div className="mt-6 sm:mt-8 flex justify-center items-center gap-3 sm:gap-4 text-xs text-neutral-600 dark:text-[#a3a3a3] font-mono">
           <span>Ho Chi Minh City</span>
           <span>&bull;</span>
           <span>Remote / Hybrid</span>
         </div>
       </div>
 
-      <div className="mt-10 sm:mt-14 text-center text-xs text-neutral-400 dark:text-[#4a4a4a] tracking-wider uppercase font-mono">
+      <div className="mt-10 sm:mt-14 text-center text-xs text-neutral-500 dark:text-[#888888] tracking-wider uppercase font-mono">
         &copy; {new Date().getFullYear()} Thanh Nguy. All rights reserved.
       </div>
     </footer>

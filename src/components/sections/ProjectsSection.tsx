@@ -26,7 +26,7 @@ export function ProjectsSection({ onOpenDetails, playClick }: ProjectsSectionPro
     <section id="projects" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto border-t border-neutral-200 dark:border-[#1f1f1f]">
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-4 sm:gap-5">
         <div>
-          <div className="text-[10px] sm:text-[11px] font-bold tracking-widest uppercase text-neutral-500 dark:text-[#737373] mb-1.5 sm:mb-2 flex items-center gap-2">
+          <div className="text-[10px] sm:text-[11px] font-bold tracking-widest uppercase text-neutral-600 dark:text-[#a3a3a3] mb-1.5 sm:mb-2 flex items-center gap-2">
             <FolderGit2 className="w-3.5 h-3.5" /> Commercial Index
           </div>
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-neutral-900 dark:text-white tracking-[-0.03em]">
@@ -45,7 +45,7 @@ export function ProjectsSection({ onOpenDetails, playClick }: ProjectsSectionPro
                 className={`relative px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-[11px] sm:text-xs font-semibold tracking-wider uppercase transition-all duration-300 shrink-0 whitespace-nowrap ios-press ${
                   isSelected
                     ? 'bg-neutral-900 text-white dark:bg-white dark:text-black shadow-lg shadow-black/10 dark:shadow-white/10'
-                    : 'text-neutral-500 hover:text-black dark:text-[#737373] dark:hover:text-white hover:bg-neutral-200/50 dark:hover:bg-white/[0.04]'
+                    : 'text-neutral-600 hover:text-black dark:text-[#a3a3a3] dark:hover:text-white hover:bg-neutral-200/50 dark:hover:bg-white/[0.04]'
                 }`}
               >
                 {cat}
