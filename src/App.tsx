@@ -629,12 +629,12 @@ export default function App() {
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         aria-label="Back to Top"
-        className={`fixed bottom-6 right-6 z-40 p-3 sm:p-3.5 rounded-full bg-[#161616]/85 backdrop-blur-xl border border-white/15 text-[#a3a3a3] hover:text-white hover:bg-white hover:text-black shadow-2xl shadow-black/80 transition-all duration-300 ios-press ${
+        className={`fixed bottom-6 right-6 z-40 p-3 sm:p-3.5 rounded-full bg-[#181818]/90 backdrop-blur-xl border border-white/10 hover:border-white/30 text-[#888888] hover:text-white hover:bg-[#252525] shadow-2xl shadow-black/80 transition-all duration-300 ios-press hover:scale-110 active:scale-95 ${
           scrolled ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 pointer-events-none translate-y-4 scale-90'
         }`}
         title="Scroll to Top"
       >
-        <ArrowUp className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.5]" />
+        <ArrowUp className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.2]" />
       </button>
     </div>
   );
