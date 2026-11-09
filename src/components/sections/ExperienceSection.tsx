@@ -35,10 +35,9 @@ export function ExperienceSection() {
                 Delivered enterprise web applications across client engagements. Led frontend modernization to Angular 19 Signals, built shared component libraries documented in Storybook, and maintained production Next.js apps.
               </p>
               <div className="flex flex-wrap gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono text-neutral-600 dark:text-[#888888]">
-                <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md bg-neutral-100 dark:bg-[#171717] border border-neutral-200 dark:border-[#282828]">Accountia (Angular 19)</span>
-                <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md bg-neutral-100 dark:bg-[#171717] border border-neutral-200 dark:border-[#282828]">Layer Platform (Next.js)</span>
-                <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md bg-neutral-100 dark:bg-[#171717] border border-neutral-200 dark:border-[#282828]">Tech2B (SSR)</span>
-                <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md bg-neutral-100 dark:bg-[#171717] border border-neutral-200 dark:border-[#282828]">Design System Owner</span>
+                <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md bg-neutral-100 dark:bg-[#171717] border border-neutral-200 dark:border-[#282828] text-neutral-900 dark:text-neutral-200 font-medium">Accountia & UI Library (Oct 2023 - Sep 2026 &bull; 3 yrs)</span>
+                <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md bg-neutral-100 dark:bg-[#171717] border border-neutral-200 dark:border-[#282828] text-neutral-900 dark:text-neutral-200 font-medium">Tech2B Platform (Jan 2021 - Sep 2023 &bull; 2 yrs 9 mos)</span>
+                <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md bg-neutral-100 dark:bg-[#171717] border border-neutral-200 dark:border-[#282828] text-neutral-500">Layer Marketplace (Jun 2023 - Sep 2023 &bull; 4 mos)</span>
               </div>
             </div>
           </div>
