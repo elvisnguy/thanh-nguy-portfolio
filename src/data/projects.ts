@@ -122,10 +122,10 @@ export const PROJECTS: Project[] = [
     role: 'Key Frontend Developer / UI Library Owner',
     timeline: 'Oct 2023 - Sep 2026 (3 Years • Core Focus)',
     category: 'Enterprise Angular',
-    liveUrl: 'https://accountia.no',
-    urlLabel: 'accountia.no',
+    liveUrl: 'https://www.jurenites.com/portfolio/accountia',
+    urlLabel: 'Product Case Study',
     techStack: ['Angular 19', 'Signals', 'Standalone Components', 'RxJS', 'TypeScript', 'SCSS', 'Storybook', 'Cypress'],
-    summary: 'Cloud accounting platform handling bookkeeping ledgers, multi-currency invoicing, and real-time ledger updates for European enterprise clients.',
+    summary: 'Cloud ERP invoicing and accounting platform designed for multi-currency operations and complex general ledger bookkeeping workflows.',
     highlights: [
       'Built and maintained the shared UI Component Library with Storybook, reducing UI bugs by over 30%.',
       'Migrated core modules to Angular 19 Signals and Standalone components, improving reactivity and rendering speed on dense financial tables.',
