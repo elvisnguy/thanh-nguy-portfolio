@@ -14,9 +14,57 @@ import {
   SiJest, 
   SiNodedotjs, 
   SiGit, 
-  SiFigma
+  SiFigma,
+  SiHtml5,
+  SiAuth0,
+  SiChartdotjs
 } from 'react-icons/si';
-import { TbTopologyStar3, TbCpu, TbRobot } from 'react-icons/tb';
+import { TbTopologyStar3, TbCpu, TbRobot, TbCalendar, TbCode, TbCloud } from 'react-icons/tb';
+
+export interface TechBadge {
+  name: string;
+  icon?: any;
+  color?: string;
+}
+
+export const TECH_MAP: Record<string, { icon: any; color: string }> = {
+  'Angular 19': { icon: SiAngular, color: '#dd0031' },
+  'Angular': { icon: SiAngular, color: '#dd0031' },
+  'Angular Universal (SSR)': { icon: SiAngular, color: '#f43f5e' },
+  'Signals': { icon: TbTopologyStar3, color: '#ec4899' },
+  'Standalone Components': { icon: SiAngular, color: '#dd0031' },
+  'RxJS': { icon: TbTopologyStar3, color: '#d946ef' },
+  'TypeScript': { icon: SiTypescript, color: '#3178c6' },
+  'JavaScript': { icon: SiJavascript, color: '#f7df1e' },
+  'SCSS': { icon: SiSass, color: '#cf649a' },
+  'Storybook': { icon: SiStorybook, color: '#ff4785' },
+  'Cypress': { icon: SiCypress, color: '#00bf88' },
+  'Next.js (App Router)': { icon: SiNextdotjs, color: '#ffffff' },
+  'Next.js (React)': { icon: SiNextdotjs, color: '#ffffff' },
+  'React': { icon: SiReact, color: '#61dafb' },
+  'TailwindCSS': { icon: SiTailwindcss, color: '#38bdf8' },
+  'CodeMirror 6': { icon: TbCode, color: '#ff7b72' },
+  'FullCalendar': { icon: TbCalendar, color: '#3b82f6' },
+  'dnd-kit': { icon: TbTopologyStar3, color: '#a855f7' },
+  'Python Engine': { icon: TbCode, color: '#eab308' },
+  'AWS S3': { icon: TbCloud, color: '#ff9900' },
+  'Git Worktrees': { icon: SiGit, color: '#f05032' },
+  'Redux Toolkit': { icon: SiRedux, color: '#764abc' },
+  'MUI X DataGrid Pro': { icon: SiReact, color: '#007fff' },
+  'Auth0': { icon: SiAuth0, color: '#eb5424' },
+  'Chart.js': { icon: SiChartdotjs, color: '#ff6384' },
+  'Figma-to-Code': { icon: SiFigma, color: '#a259ff' },
+  'Pixel-perfect Responsive': { icon: SiFigma, color: '#a259ff' },
+  'Modern Web': { icon: SiHtml5, color: '#e34f26' },
+  'Semantic HTML5': { icon: SiHtml5, color: '#e34f26' },
+  'Accessibility (a11y)': { icon: TbCpu, color: '#10b981' },
+  'PHP (Laravel)': { icon: SiLaravel, color: '#ff2d20' },
+  'Blade Templates': { icon: SiPhp, color: '#777bb4' },
+  'Server-side DataTables': { icon: TbTopologyStar3, color: '#06b6d4' },
+  'RESTful APIs': { icon: TbTopologyStar3, color: '#06b6d4' },
+  'Node.js': { icon: SiNodedotjs, color: '#68a063' },
+  'AI/LLM': { icon: TbRobot, color: '#10a37f' }
+};
 
 export interface SkillItem {
   name: string;
@@ -76,7 +124,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
   {
     name: 'Testing & Workflows',
     skills: [
-      { name: 'Cypress (E2E Testing)', icon: SiCypress, color: '#17202c' },
+      { name: 'Cypress (E2E Testing)', icon: SiCypress, color: '#00bf88' },
       { name: 'Jest / Karma', icon: SiJest, color: '#c21325' },
       { name: 'Git Worktrees', icon: SiGit, color: '#f05032' },
       { name: 'AI-Augmented Engineering', icon: TbRobot, color: '#10a37f' }

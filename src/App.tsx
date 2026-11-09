@@ -16,7 +16,7 @@ import {
   ArrowUpRight,
   Sparkles
 } from 'lucide-react';
-import { PROJECTS, SKILL_GROUPS } from './data/projects';
+import { PROJECTS, SKILL_GROUPS, TECH_MAP } from './data/projects';
 
 export default function App() {
   const [activeCategory, setActiveCategory] = useState<string>('All');
@@ -267,15 +267,25 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="pt-5 border-t border-[#1f1f1f] flex flex-wrap gap-1.5">
-                {project.techStack.map((tech, tIdx) => (
-                  <span 
-                    key={tIdx} 
-                    className="px-2.5 py-1 rounded bg-[#171717] border border-[#262626] text-[10px] font-mono tracking-wider text-[#888888]"
-                  >
-                    {tech}
-                  </span>
-                ))}
+              <div className="pt-5 border-t border-[#1f1f1f] flex flex-wrap gap-2">
+                {project.techStack.map((tech, tIdx) => {
+                  const techMeta = TECH_MAP[tech];
+                  const Icon = techMeta?.icon;
+                  return (
+                    <span 
+                      key={tIdx} 
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#181818] border border-[#262626] text-[11px] font-mono tracking-wide text-[#b5b5b5] hover:text-white hover:border-[#404040] transition-colors"
+                    >
+                      {Icon && (
+                        <Icon 
+                          className="w-3.5 h-3.5 shrink-0" 
+                          style={{ color: techMeta.color || '#ffffff' }}
+                        />
+                      )}
+                      <span>{tech}</span>
+                    </span>
+                  );
+                })}
               </div>
             </div>
           ))}
