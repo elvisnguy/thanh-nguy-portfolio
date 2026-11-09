@@ -13,7 +13,9 @@ import {
   Send, 
   Copy, 
   Check,
-  ExternalLink
+  ExternalLink,
+  FileDown,
+  FileText
 } from 'lucide-react';
 import { PROJECTS, SKILL_CATEGORIES } from './data/projects';
 
@@ -108,21 +110,43 @@ export default function App() {
           </div>
 
           {/* Action CTAs */}
-          <div className="flex flex-wrap items-center gap-4 pt-4">
+          <div className="flex flex-wrap items-center gap-3 pt-4">
             <a
               href="#projects"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm shadow-xl shadow-indigo-600/30 transition-all hover:scale-[1.02]"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm shadow-xl shadow-indigo-600/30 transition-all hover:scale-[1.02]"
             >
-              <span>Explore Featured Projects</span>
+              <span>Explore Projects</span>
               <ChevronRight className="w-4 h-4" />
+            </a>
+
+            {/* Direct CV Download buttons */}
+            <a
+              href="/cv.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-indigo-700/60 text-indigo-300 hover:text-white font-semibold text-sm transition-all shadow-md"
+              title="View & Save PDF CV"
+            >
+              <FileText className="w-4 h-4 text-indigo-400" />
+              <span>View PDF CV</span>
+            </a>
+
+            <a
+              href="/Thanh_Nguy_CV.docx"
+              download="Thanh_Nguy_CV.docx"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700/80 text-slate-200 font-medium text-sm transition-all"
+              title="Download Word Docx"
+            >
+              <FileDown className="w-4 h-4 text-slate-400" />
+              <span>Download Word (.docx)</span>
             </a>
 
             <button
               onClick={() => copyToClipboard('vanthanhnguy2907@gmail.com', 'email')}
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700/80 text-slate-200 font-medium text-sm transition-all"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900/60 hover:bg-slate-800 border border-slate-800 text-slate-300 font-medium text-sm transition-all"
             >
               {copiedText === 'email' ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4 text-slate-400" />}
-              <span>{copiedText === 'email' ? 'Email Copied!' : 'Copy Email'}</span>
+              <span>{copiedText === 'email' ? 'Copied' : 'Email'}</span>
             </button>
           </div>
         </div>
