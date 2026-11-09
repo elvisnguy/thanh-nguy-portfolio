@@ -55,7 +55,7 @@ export function Footer({ playClick }: FooterProps) {
         </div>
       </div>
 
-      <div className="mt-10 sm:mt-14 text-center text-xs text-neutral-500 dark:text-[#888888] tracking-wider uppercase font-mono">
+      <div className="mt-10 sm:mt-14 text-center text-xs text-neutral-600 dark:text-[#a3a3a3] tracking-wider uppercase font-mono">
         &copy; {new Date().getFullYear()} Thanh Nguy. All rights reserved.
       </div>
     </footer>

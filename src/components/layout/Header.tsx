@@ -156,7 +156,7 @@ export function Header({
       {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white/95 dark:bg-[#121212]/95 backdrop-blur-2xl border-b border-neutral-200 dark:border-[#222222] px-5 py-4 space-y-3 animate-fadeIn">
-          <div className="flex flex-col space-y-3 text-xs font-bold tracking-widest uppercase text-neutral-600 dark:text-[#a3a3a3]">
+          <div className="flex flex-col space-y-3 text-xs font-bold tracking-widest uppercase text-neutral-700 dark:text-[#a3a3a3]">
             <a 
               href="#about" 
               onClick={() => setMobileMenuOpen(false)}

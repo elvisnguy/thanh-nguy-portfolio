@@ -25,7 +25,7 @@ export function SkillsSection({ playClick }: SkillsSectionProps) {
         {SKILL_GROUPS.map((group, idx) => (
           <div 
             key={idx}
-            className="p-5 sm:p-7 rounded-2xl bg-white dark:bg-[#121212]/90 backdrop-blur-md border border-neutral-200/90 dark:border-[#222222] hover:border-neutral-400 dark:hover:border-white/30 transition-all duration-300 flex flex-col justify-between ios-press-sm shadow-[0_2px_12px_rgba(0,0,0,0.04)] dark:shadow-none hover:shadow-xl hover:shadow-black/5 dark:hover:shadow-white/[0.02]"
+            className="p-5 sm:p-7 rounded-2xl bg-white dark:bg-[#121212] border border-neutral-200/90 dark:border-[#222222] hover:border-neutral-400 dark:hover:border-white/30 transition-all duration-300 flex flex-col justify-between ios-press-sm shadow-[0_2px_12px_rgba(0,0,0,0.04)] dark:shadow-none hover:shadow-xl hover:shadow-black/5 dark:hover:shadow-white/[0.02]"
           >
             <div>
               <h3 className="text-xs font-bold tracking-widest uppercase text-neutral-900 dark:text-white mb-4 flex items-center gap-2">

@@ -26,7 +26,7 @@ export function ProjectCard({ project, idx, onOpenDetails, playClick }: ProjectC
     <div 
       ref={cardRef}
       onMouseMove={handleMouseMove}
-      className="group relative p-5 sm:p-7 md:p-8 rounded-2xl bg-white dark:bg-[#121212]/90 backdrop-blur-md border border-neutral-200/90 dark:border-[#222222] hover:border-neutral-400 dark:hover:border-neutral-500/80 transition-all duration-300 flex flex-col justify-between shadow-[0_2px_12px_rgba(0,0,0,0.04)] dark:shadow-none hover:shadow-2xl hover:shadow-black/5 dark:hover:shadow-white/[0.03] overflow-hidden ios-press-sm"
+      className="group relative p-5 sm:p-7 md:p-8 rounded-2xl bg-white dark:bg-[#121212] border border-neutral-200/90 dark:border-[#222222] hover:border-neutral-400 dark:hover:border-neutral-500/80 transition-all duration-300 flex flex-col justify-between shadow-[0_2px_12px_rgba(0,0,0,0.04)] dark:shadow-none hover:shadow-2xl hover:shadow-black/5 dark:hover:shadow-white/[0.03] overflow-hidden ios-press-sm"
     >
       {/* iOS Spotlight Specular Radial Highlight via CSS Custom Properties (Zero React re-renders) */}
       <div 
