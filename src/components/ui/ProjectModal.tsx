@@ -161,9 +161,9 @@ export function ProjectModal({ project, onClose, playClick }: ProjectModalProps)
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => playClick?.('tick')}
-              className="sheen-glow inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-neutral-900 hover:bg-black dark:bg-white dark:hover:bg-neutral-100 text-white dark:text-black font-bold text-xs uppercase tracking-wider transition-all ios-press shadow-xl hover:shadow-2xl"
+              className="sheen-glow inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-neutral-900 hover:bg-black dark:bg-white dark:hover:bg-neutral-100 text-white dark:text-black font-bold text-xs uppercase tracking-wider transition-all ios-press shadow-xl hover:shadow-2xl"
             >
-              <span>{project.id === 'tech2b' ? 'View Case Study ↗' : 'View Live Showcase ↗'}</span>
+              <span>{project.id === 'tech2b' ? 'View Case Study' : 'View Live Showcase'}</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           )}
