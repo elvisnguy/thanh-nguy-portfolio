@@ -11,6 +11,8 @@ export interface Project {
   highlights: string[];
   metrics: string[];
   featured?: boolean;
+  liveUrl?: string;
+  urlLabel?: string;
 }
 
 export const PROJECTS: Project[] = [
@@ -23,6 +25,8 @@ export const PROJECTS: Project[] = [
     teamSize: '10–15',
     category: 'Enterprise Angular',
     featured: true,
+    liveUrl: 'https://accountia.no',
+    urlLabel: 'accountia.no',
     techStack: ['Angular 19', 'Signals', 'Standalone Components', 'RxJS', 'TypeScript', 'SCSS', 'Storybook', 'Cypress'],
     summary: 'A mission-critical SaaS accounting ecosystem handling complex high-frequency bookkeeping ledgers, multi-currency invoicing, and real-time ledger updates for European enterprise clients.',
     highlights: [
@@ -65,7 +69,7 @@ export const PROJECTS: Project[] = [
     summary: 'A premier commercial matchmaking platform connecting esports organizations, game titles, and global sponsors to negotiate multi-tier sponsorship contracts.',
     highlights: [
       'Built high-density sponsorship listings and proposal management with MUI X DataGrid Pro (multi-sorting, filtering, customized toolbars).',
-      'Developed interactive audience analytics dashboards utilizing Chart.js displaying live demographic and viewer engagement metrics.',
+      'Developed interactive audience analytics dashboards utilizing Chart.js displaying live demographic and viewer reach metrics.',
       'Implemented secure enterprise authentication and session management via Auth0 (@auth0/nextjs-auth0).',
       'Demonstrated multi-framework frontend versatility shipping high-performance Next.js production features.'
     ],
@@ -80,6 +84,8 @@ export const PROJECTS: Project[] = [
     teamSize: '~20 (Design Studio + 2-3 Devs)',
     category: 'Design Systems',
     featured: false,
+    liveUrl: 'https://www.buv.edu.vn',
+    urlLabel: 'buv.edu.vn',
     techStack: ['Modern Web', 'SCSS', 'Pixel-perfect Responsive', 'Figma-to-Code', 'Accessibility (a11y)'],
     summary: 'Official digital administrative portal for British University Vietnam, adhering to rigorous British higher education branding guidelines and high-fidelity Figma specifications.',
     highlights: [
@@ -116,14 +122,17 @@ export const PROJECTS: Project[] = [
     teamSize: '4',
     category: 'Enterprise Angular',
     featured: false,
+    liveUrl: 'https://aps.autodesk.com/customer-stories/tech2b',
+    urlLabel: 'Autodesk Customer Story',
     techStack: ['Angular', 'Angular Universal (SSR)', 'TypeScript', 'SCSS', 'RxJS', 'Node.js', 'RESTful APIs'],
     summary: 'Enterprise B2B commercial platform facilitating catalog exploration, bulk quotes, and automated supplier inventory coordination.',
     highlights: [
+      'Featured on Autodesk Customer Stories as a high-impact B2B manufacturing collaboration platform.',
       'Implemented Angular Universal (Server-Side Rendering) for public product catalogs, slashing initial load latency by over 35% and boosting SEO discoverability.',
       'Constructed complex multi-step reactive checkout workflows and automated supplier inquiry submissions.',
       'Authored centralized HTTP interceptors for automatic JWT injection, caching, and unified error handling.'
     ],
-    metrics: ['Angular Universal (SSR)', 'SEO Latency -35%', 'Enterprise Foundation']
+    metrics: ['Autodesk Case Study', 'Angular Universal (SSR)', 'SEO Latency -35%']
   }
 ];
 

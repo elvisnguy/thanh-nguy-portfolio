@@ -12,7 +12,8 @@ import {
   GraduationCap, 
   Send, 
   Copy, 
-  Check
+  Check,
+  ExternalLink
 } from 'lucide-react';
 import { PROJECTS, SKILL_CATEGORIES } from './data/projects';
 
@@ -218,6 +219,18 @@ export default function App() {
                       {project.role} • <span className="text-slate-300">{project.timeline}</span> (Team of {project.teamSize})
                     </p>
                   </div>
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-950/80 hover:bg-indigo-900 border border-indigo-700/60 text-indigo-300 hover:text-white text-xs font-semibold shrink-0 transition-all shadow-sm group/link"
+                      title={`Visit ${project.urlLabel || 'Live Site'}`}
+                    >
+                      <span>{project.urlLabel || 'Live'}</span>
+                      <ExternalLink className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                    </a>
+                  )}
                 </div>
 
                 <p className="text-slate-300 text-sm leading-relaxed mb-5">
