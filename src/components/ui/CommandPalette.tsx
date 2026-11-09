@@ -70,13 +70,18 @@ export function CommandPalette({ isOpen, onClose, onSelectProject, playClick }: 
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Type a command or search (e.g. Angular, Signals, Next.js, PDF)..."
+            aria-label="Search portfolio and commands"
             autoFocus
             className="w-full bg-transparent text-sm text-neutral-900 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 outline-none"
           />
           <kbd className="hidden sm:inline-flex items-center gap-0.5 px-2 py-0.5 rounded bg-neutral-100 dark:bg-[#222222] border border-neutral-300 dark:border-[#333333] text-[10px] text-neutral-500 font-mono">
             ESC
           </kbd>
-          <button onClick={onClose} className="p-1 rounded text-neutral-400 hover:text-white">
+          <button 
+            onClick={onClose} 
+            className="p-1 rounded text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
+            aria-label="Close Command Palette"
+          >
             <X className="w-4 h-4" />
           </button>
         </div>
