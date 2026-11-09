@@ -1,26 +1,18 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { 
-  Terminal, 
-  Layers, 
   Cpu, 
   Globe, 
-  ExternalLink, 
   Mail, 
   Phone, 
   MapPin, 
   CheckCircle2, 
-  Sparkles, 
-  ArrowUpRight, 
   ChevronRight, 
   ShieldCheck, 
-  Code2, 
   FolderGit2, 
   GraduationCap, 
   Send, 
   Copy, 
-  Check,
-  Zap,
-  Laptop
+  Check
 } from 'lucide-react';
 import { PROJECTS, SKILL_CATEGORIES } from './data/projects';
 
