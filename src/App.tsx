@@ -80,11 +80,11 @@ export default function App() {
           </div>
 
           <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.15] text-slate-50">
-            Crafting High-Performance <span className="bg-gradient-to-r from-indigo-400 via-sky-300 to-indigo-300 bg-clip-text text-transparent">Angular & Next.js</span> Web Systems
+            Building High-Performance <span className="bg-gradient-to-r from-indigo-400 via-sky-300 to-indigo-300 bg-clip-text text-transparent">Angular & Next.js</span> Web Apps
           </h1>
 
           <p className="text-lg sm:text-xl text-slate-300 leading-relaxed font-normal">
-            Hi, I'm <strong className="text-white font-semibold">Nguy Van Thanh</strong> — Middle Full-stack Developer with <span className="text-indigo-300 font-medium">5 commercial years</span> mastering <strong className="text-white">Angular 19 Signals</strong>, <strong className="text-white">Enterprise UI Component Libraries</strong>, and high-load web architectures. Extensive track record in 100% remote collaboration with European (EU) stakeholders.
+            Hi, I'm <strong className="text-white font-semibold">Thanh Nguy</strong>, a Frontend Engineer with <span className="text-indigo-300 font-medium">5 years of experience</span> working with <strong className="text-white">Angular (Signals, Standalone)</strong>, <strong className="text-white">Next.js</strong>, and component libraries. Experienced in working remotely with European clients and cross-timezone teams.
           </p>
 
           {/* Quick Metrics */}
@@ -282,15 +282,15 @@ export default function App() {
             <div className="p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
                 <h3 className="text-xl font-bold text-slate-50">
-                  EZTEK — Middle Full-stack Developer / Key Frontend Engineer
+                  EZTEK | Frontend Engineer
                 </h3>
                 <span className="px-3 py-1 rounded-full bg-indigo-950/80 border border-indigo-800/60 text-indigo-300 text-xs font-semibold w-fit">
-                  Jan 2021 – Dec 2026 (5 Years Stable Tenure)
+                  Jan 2021 - Dec 2026 (5 Years)
                 </span>
               </div>
-              <p className="text-xs text-indigo-400 font-medium mb-3">Ho Chi Minh City, Vietnam • Software Technology Consulting</p>
+              <p className="text-xs text-indigo-400 font-medium mb-3">Ho Chi Minh City, Vietnam • Software Consultancy</p>
               <p className="text-slate-300 text-sm leading-relaxed mb-4">
-                Served as key technical contributor driving frontend architectural evolution across enterprise clients. Delivered mission-critical financial platforms (Accountia), B2B gaming marketplaces (Layer), and commerce portals (Tech2B). Spearheaded modernization to Angular 19 Signals and Storybook Design Systems.
+                Worked as core frontend engineer across multiple client projects. Built and maintained cloud accounting software (Accountia), gaming marketplace (Layer), and B2B platforms (Tech2B). Focused on Angular Signals migration, component libraries with Storybook, and clean UI architecture.
               </p>
               <div className="flex flex-wrap gap-2 text-xs text-slate-400 font-mono">
                 <span className="px-2 py-0.5 rounded bg-slate-950 border border-slate-800">Accountia</span>
@@ -307,15 +307,15 @@ export default function App() {
             <div className="p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
                 <h3 className="text-xl font-bold text-slate-50">
-                  National & International Independent Engagements
+                  Freelance & Client Projects
                 </h3>
                 <span className="px-3 py-1 rounded-full bg-purple-950/80 border border-purple-800/60 text-purple-300 text-xs font-semibold w-fit">
-                  2025 – 2026
+                  2025 - 2026
                 </span>
               </div>
-              <p className="text-xs text-purple-400 font-medium mb-3">National Scale & International Higher Education</p>
+              <p className="text-xs text-purple-400 font-medium mb-3">Education & Public Sector</p>
               <p className="text-slate-300 text-sm leading-relaxed mb-4">
-                Selected for specialized high-trust client implementations: developed administrative CMS dashboards for Vietnam's <strong>National Educational Resource Hub (Trục Học Liệu Quốc Gia)</strong>, and translated rigorous British design systems into pixel-perfect templates for <strong>British University Vietnam (BUV)</strong>.
+                Delivered admin CMS interfaces for Vietnam's <strong>National Educational Resource Hub (Trục Học Liệu Quốc Gia)</strong>, and turned Figma designs into pixel-perfect pages for <strong>British University Vietnam (BUV)</strong>.
               </p>
             </div>
           </div>
@@ -326,10 +326,10 @@ export default function App() {
             <div className="p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
                 <h3 className="text-xl font-bold text-slate-50">
-                  HighscoresAI — AI Standardized Test Prep Ecosystem
+                  HighscoresAI | Test Prep Platform
                 </h3>
                 <span className="px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-800/60 text-emerald-300 text-xs font-semibold w-fit">
-                  Current Engagement
+                  Current
                 </span>
               </div>
               <p className="text-slate-300 text-sm leading-relaxed">
