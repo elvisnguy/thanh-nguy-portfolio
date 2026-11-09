@@ -43,7 +43,7 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen bg-[#0d0d0d] text-[#e5e5e5] relative selection:bg-white selection:text-black font-sans transition-opacity duration-1000 overflow-x-hidden ${mounted ? 'opacity-100' : 'opacity-0'}`}>
+    <div className={`min-h-screen bg-[#0d0d0d] text-[#e5e5e5] relative selection:bg-neutral-800 selection:text-white font-sans transition-opacity duration-1000 overflow-x-hidden ${mounted ? 'opacity-100' : 'opacity-0'}`}>
       
       {/* Background Lighting Mesh - Fully responsive boundaries */}
       <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
