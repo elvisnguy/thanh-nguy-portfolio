@@ -181,7 +181,7 @@ export default function App() {
             </h1>
 
             <p className="text-sm sm:text-base md:text-xl text-[#a3a3a3] leading-relaxed max-w-2xl font-light">
-              Crafting production web applications with <span className="text-white font-medium">Angular 19 Signals</span>, <span className="text-white font-medium">Next.js</span>, and scalable component systems. Experienced in asynchronous remote delivery with European clients.
+              Building and scaling production web applications with <span className="text-white font-medium">Angular 19 Signals</span>, <span className="text-white font-medium">Next.js</span>, and shared component systems. 5 years of commercial experience with direct European client collaboration.
             </p>
           </div>
 
