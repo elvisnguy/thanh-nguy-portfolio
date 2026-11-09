@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { useScrollProgress } from './hooks/useScrollProgress';
 import { useSoundEffects } from './hooks/useSoundEffects';
 import { useTheme } from './hooks/useTheme';
@@ -10,9 +10,11 @@ import { ProjectsSection } from './components/sections/ProjectsSection';
 import { SkillsSection } from './components/sections/SkillsSection';
 import { ExperienceSection } from './components/sections/ExperienceSection';
 import { AmbientGlow } from './components/ui/AmbientGlow';
-import { ProjectModal } from './components/ui/ProjectModal';
-import { CommandPalette } from './components/ui/CommandPalette';
 import { Project } from './types';
+
+// Lazy-load heavier interactive dialogs
+const ProjectModal = lazy(() => import('./components/ui/ProjectModal').then(m => ({ default: m.ProjectModal })));
+const CommandPalette = lazy(() => import('./components/ui/CommandPalette').then(m => ({ default: m.CommandPalette })));
 
 export default function App() {
   const [mounted, setMounted] = useState<boolean>(false);
@@ -62,20 +64,28 @@ export default function App() {
       {/* Floating Back to Top */}
       <BackToTop scrolled={scrolled} playClick={playClick} />
 
-      {/* Project Architecture Deep-Dive Modal */}
-      <ProjectModal 
-        project={activeModalProject} 
-        onClose={() => setActiveModalProject(null)} 
-        playClick={playClick}
-      />
+      {/* Project Architecture Deep-Dive Modal (Code-split) */}
+      {activeModalProject && (
+        <Suspense fallback={null}>
+          <ProjectModal 
+            project={activeModalProject} 
+            onClose={() => setActiveModalProject(null)} 
+            playClick={playClick}
+          />
+        </Suspense>
+      )}
 
-      {/* Quick Terminal / Command Palette (Ctrl+K) */}
-      <CommandPalette 
-        isOpen={isCommandOpen} 
-        onClose={() => setIsCommandOpen(false)}
-        onSelectProject={(p) => setActiveModalProject(p)}
-        playClick={playClick}
-      />
+      {/* Quick Terminal / Command Palette (Ctrl+K) (Code-split) */}
+      {isCommandOpen && (
+        <Suspense fallback={null}>
+          <CommandPalette 
+            isOpen={isCommandOpen} 
+            onClose={() => setIsCommandOpen(false)}
+            onSelectProject={(p) => setActiveModalProject(p)}
+            playClick={playClick}
+          />
+        </Suspense>
+      )}
     </div>
   );
 }
