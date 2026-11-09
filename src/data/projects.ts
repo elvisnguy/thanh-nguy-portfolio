@@ -46,6 +46,8 @@ export const PROJECTS: Project[] = [
     teamSize: '4',
     category: 'React & Next.js',
     featured: true,
+    liveUrl: 'https://www.highscores.ai/',
+    urlLabel: 'highscores.ai',
     techStack: ['Next.js (App Router)', 'TypeScript', 'TailwindCSS', 'CodeMirror 6', 'FullCalendar', 'dnd-kit', 'Python Engine', 'AWS S3', 'Git Worktrees'],
     summary: 'An advanced digital test preparation and automated evaluation ecosystem conforming to CollegeBoard BlueBook specs, featuring predictive score diagnostics and live browser code execution.',
     highlights: [
@@ -104,6 +106,8 @@ export const PROJECTS: Project[] = [
     teamSize: '20–30 (National Project Team)',
     category: 'Full-stack & CMS',
     featured: false,
+    liveUrl: 'https://giaoducso.nxbgd.vn/',
+    urlLabel: 'giaoducso.nxbgd.vn',
     techStack: ['PHP (Laravel)', 'Blade Templates', 'SCSS', 'JavaScript', 'Server-side DataTables', 'RESTful APIs'],
     summary: 'National-scale digital educational repository connecting educators, schools, and administrators across Vietnam to index and distribute approved curriculum assets.',
     highlights: [
