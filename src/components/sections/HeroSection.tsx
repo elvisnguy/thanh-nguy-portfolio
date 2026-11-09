@@ -71,7 +71,7 @@ export function HeroSection({ playClick }: HeroSectionProps) {
         {/* iOS Fluid Tactile CTAs */}
         <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-2">
           <a
-            href="https://www.linkedin.com/in/thanh-n-345518369/"
+            href="https://www.linkedin.com/in/itsthanhnguy/"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => playClick?.('tick')}

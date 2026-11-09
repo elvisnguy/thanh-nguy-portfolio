@@ -117,7 +117,7 @@ export function Header({
           </button>
 
           <a 
-            href="https://www.linkedin.com/in/thanh-n-345518369/" 
+            href="https://www.linkedin.com/in/itsthanhnguy/" 
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => playClick?.('tick')}

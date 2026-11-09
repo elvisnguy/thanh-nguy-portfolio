@@ -19,7 +19,7 @@ export function Footer({ playClick }: FooterProps) {
 
         <div className="flex flex-col sm:flex-row flex-wrap justify-center items-stretch sm:items-center gap-2.5 sm:gap-3">
           <a
-            href="https://www.linkedin.com/in/thanh-n-345518369/"
+            href="https://www.linkedin.com/in/itsthanhnguy/"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => playClick?.('tick')}
