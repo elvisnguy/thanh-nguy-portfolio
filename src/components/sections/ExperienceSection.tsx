@@ -32,7 +32,7 @@ export function ExperienceSection() {
                 Ho Chi Minh City, Vietnam &bull; Software Technology Consultancy
               </p>
               <p className="text-neutral-600 dark:text-[#a3a3a3] text-xs sm:text-sm leading-relaxed mb-4 font-light">
-                Delivered enterprise web applications across client engagements. Led frontend modernization to Angular 19 Signals, built shared component libraries documented in Storybook, and maintained production Next.js apps.
+                Delivered enterprise web applications across client engagements. Led frontend modernization to Angular 19 Signals &amp; NgRx, implemented i18n multilingual/RTL systems, built shared component libraries documented in Storybook, and maintained production Next.js apps.
               </p>
               <div className="flex flex-wrap gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono text-neutral-600 dark:text-[#888888]">
                 <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md bg-neutral-100 dark:bg-[#171717] border border-neutral-200 dark:border-[#282828] text-neutral-900 dark:text-neutral-200 font-medium">Accountia & UI Library (Oct 2023 - Sep 2026 &bull; 3 yrs)</span>

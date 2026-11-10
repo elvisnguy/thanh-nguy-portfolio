@@ -7,6 +7,7 @@ import {
   SiTailwindcss, 
   SiSass, 
   SiRedux, 
+  SiNgrx,
   SiPhp, 
   SiLaravel, 
   SiStorybook, 
@@ -19,7 +20,7 @@ import {
   SiAuth0,
   SiChartdotjs
 } from 'react-icons/si';
-import { TbTopologyStar3, TbCpu, TbRobot, TbCalendar, TbCode, TbCloud } from 'react-icons/tb';
+import { TbTopologyStar3, TbCpu, TbRobot, TbCalendar, TbCode, TbCloud, TbLanguage } from 'react-icons/tb';
 import { Project, SkillGroup } from '../types';
 
 export const TECH_MAP: Record<string, { icon: any; color: string }> = {
@@ -28,6 +29,8 @@ export const TECH_MAP: Record<string, { icon: any; color: string }> = {
   'Angular Universal (SSR)': { icon: SiAngular, color: '#f43f5e' },
   'Signals': { icon: TbTopologyStar3, color: '#ec4899' },
   'Standalone Components': { icon: SiAngular, color: '#dd0031' },
+  'NgRx': { icon: SiNgrx, color: '#ba2bd3' },
+  'i18n & RTL': { icon: TbLanguage, color: '#0ea5e9' },
   'RxJS': { icon: TbTopologyStar3, color: '#d946ef' },
   'TypeScript': { icon: SiTypescript, color: '#3178c6' },
   'JavaScript': { icon: SiJavascript, color: '#f7df1e' },
@@ -81,15 +84,17 @@ export const SKILL_GROUPS: SkillGroup[] = [
     skills: [
       { name: 'Angular Signals', icon: TbTopologyStar3, color: '#ec4899' },
       { name: 'RxJS (Fine-tuned)', icon: TbTopologyStar3, color: '#d946ef' },
+      { name: 'NgRx (Store, Effects, Selectors)', icon: SiNgrx, color: '#ba2bd3' },
       { name: 'Redux Toolkit', icon: SiRedux, color: '#764abc' },
       { name: 'React Context & Custom Hooks', icon: SiReact, color: '#61dafb' }
     ]
   },
   {
-    name: 'UI Libraries & Design Systems',
+    name: 'UI Libraries & Architecture',
     skills: [
       { name: 'Enterprise UI Library Owner', icon: SiStorybook, color: '#ff4785' },
       { name: 'Storybook Component Docs', icon: SiStorybook, color: '#ff4785' },
+      { name: 'i18n & Multilingual (RTL Support)', icon: TbLanguage, color: '#0ea5e9' },
       { name: 'Figma-to-Code Pixel-Perfect', icon: SiFigma, color: '#a259ff' },
       { name: 'MUI X DataGrid Pro', icon: SiReact, color: '#007fff' },
       { name: 'Angular Material', icon: SiAngular, color: '#e11d48' }
@@ -128,18 +133,19 @@ export const PROJECTS: Project[] = [
       url: 'https://www.jurenites.com/portfolio/accountia',
       label: 'Design Case Study'
     },
-    techStack: ['Angular 19', 'Signals', 'Standalone Components', 'RxJS', 'TypeScript', 'SCSS', 'Storybook', 'Cypress'],
+    techStack: ['Angular 19', 'Signals', 'NgRx', 'RxJS', 'i18n & RTL', 'TypeScript', 'SCSS', 'Storybook', 'Cypress'],
     summary: 'Cloud ERP invoicing and accounting platform designed for multi-currency operations and complex general ledger bookkeeping workflows.',
     highlights: [
       'Built and maintained the shared UI Component Library with Storybook, reducing UI bugs by over 30%.',
-      'Migrated core modules to Angular 19 Signals and Standalone components, improving reactivity and rendering speed on dense financial tables.',
+      'Architected state management combining NgRx with Angular 19 Signals for fine-grained reactivity and predictable financial data flow.',
+      'Implemented i18n multilingual localization with dynamic Right-to-Left (RTL) layout switching for Arabic, Kurdish, and English locales.',
       'Created custom unsubscription utilities (takeUntilDestroy) and directives to prevent RxJS memory leaks.',
       'Collaborated directly with European product leads and developers in daily English standups and PR reviews.'
     ],
     architectureDetails: {
-      problem: 'Frequent global Change Detection triggered by high-frequency financial updates was causing UI frame drops and memory accumulation across large transaction grids.',
-      solution: 'Re-architected the view layer using Angular 19 Signals for granular, cell-level reactivity. Enforced strict unsubscription patterns and encapsulated reusable design tokens inside an isolated Storybook UI Library.',
-      engineeringWin: 'Eliminated unnecessary DOM re-renders, slashed memory leaks by 100%, and cut UI regression bugs by over 30% across multiple client squads.'
+      problem: 'Frequent global Change Detection triggered by high-frequency financial updates was causing UI frame drops, while multi-language requirements (including RTL text direction for Arabic/Kurdish) introduced layout reflows and state synchronization issues across complex transaction grids.',
+      solution: 'Re-architected the view layer using Angular 19 Signals alongside NgRx store selectors for granular cell reactivity. Built dynamic i18n locale services with bidirectional (LTR/RTL) styling adapters, and encapsulated reusable design tokens inside an isolated Storybook UI Library.',
+      engineeringWin: 'Eliminated unnecessary DOM re-renders, achieved seamless zero-latency language/RTL switching, slashed memory leaks by 100%, and cut UI regression bugs by over 30% across multiple client squads.'
     }
   },
   {
