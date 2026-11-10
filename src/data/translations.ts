@@ -82,7 +82,7 @@ export const TRANSLATIONS = {
       statusPill: 'Kỹ sư Frontend • 5 Năm KN • Việt Nam • EU Remote',
       headlinePrefix: 'NGỤY VẠN THÀNH.',
       headlineSuffix: 'KIẾN TRÚC FRONTEND.',
-      bio: 'Chuyên thiết kế kiến trúc và mở rộng các ứng dụng web phức tạp với Angular 19 Signals, Next.js và hệ thống UI Design System quy chuẩn doanh nghiệp. 5 năm thực chiến, đồng hành trực tiếp cùng đối tác và khách hàng châu Âu.',
+      bio: '5 năm kinh nghiệm phát triển ứng dụng web với Angular 19 Signals, Next.js và Design System dùng chung. Trực tiếp làm việc với các đối tác và khách hàng châu Âu.',
       metrics: [
         { val: '5 Năm KN', label: 'Kinh Nghiệm Thực Chiến' },
         { val: 'Angular 19', label: 'Signals & Standalone' },
@@ -96,46 +96,46 @@ export const TRANSLATIONS = {
       copyEmail: 'Sao chép Email'
     },
     projects: {
-      label: 'Danh Mục Thực Chiến',
+      label: 'Dự Án Đã Làm',
       heading: 'Dự Án Tiêu Biểu',
-      subheading: 'Các nền tảng doanh nghiệp quy mô lớn và giải pháp kiến trúc được bàn giao qua 5 năm thực chiến.',
+      subheading: 'Các dự án web doanh nghiệp đã triển khai và bàn giao qua 5 năm làm việc thực tế.',
       filterAll: 'Tất cả dự án',
-      deepDivePrompt: 'Bấm vào thẻ để xem phân tích kiến trúc chi tiết',
+      deepDivePrompt: 'Bấm vào thẻ để xem chi tiết kiến trúc',
       deepDiveBtn: 'Chi tiết',
       viewShowcase: 'Xem Trực Tuyến',
       viewCaseStudy: 'Case Study',
-      modalBadge: 'Phân Tích Kiến Trúc',
+      modalBadge: 'Chi Tiết Kỹ Thuật',
       executiveOverview: 'Tổng Quan Dự Án',
-      coreChallenge: 'Thách Thức Kỹ Thuật Trọng Tâm',
-      solutionPattern: 'Giải Pháp & Pattern Kiến Trúc',
-      winImpact: 'Dấu Ấn Kỹ Thuật & Hiệu Quả Nghiệp Vụ',
-      verifiedStack: 'Bộ Công Nghệ Production Đã Dùng',
+      coreChallenge: 'Thách Thức Kỹ Thuật',
+      solutionPattern: 'Giải Pháp & Kiến Trúc',
+      winImpact: 'Kết Quả & Tác Động',
+      verifiedStack: 'Công Nghệ Sử Dụng',
       dismissNote: 'Nhấn ESC hoặc bấm ra ngoài để đóng'
     },
     skills: {
-      label: 'Phân Loại Năng Lực',
-      heading: 'Kỹ Năng & Công Cụ',
-      subheading: 'Bộ công nghệ thực chiến với trọng tâm chuyên sâu vào Angular reactivity, Design System doanh nghiệp và kiến trúc web hiệu năng cao.'
+      label: 'Kỹ Năng & Công Cụ',
+      heading: 'Công Nghệ Sử Dụng',
+      subheading: 'Các công nghệ đã dùng trong dự án thực tế, tập trung vào Angular, React/Next.js và hệ thống UI dùng chung.'
     },
     experience: {
-      label: 'Lộ Trình Nghề Nghiệp',
-      heading: '5 Năm Thực Chiến',
-      academic: 'Học Vấn & Bằng Cấp',
+      label: 'Kinh Nghiệm Làm Việc',
+      heading: '5 Năm Kinh Nghiệm',
+      academic: 'Học Vấn',
       degree: 'Bằng Kỹ Sư Công Nghệ Thông Tin',
       university: 'Đại học Công nghệ Sài Gòn (STU)',
-      degreeDesc: 'Chương trình kỹ sư chính quy 4.5 năm chuyên sâu về kỹ thuật phần mềm, cấu trúc dữ liệu và kiến trúc hệ thống.',
-      globalComm: 'Giao Tiếp Quốc Tế',
-      englishProficiency: 'Tiếng Anh Làm Việc Chuyên Nghiệp',
-      englishSub: 'Tương đương TOEIC ~700 • Họp Daily Sync Quốc Tế Hàng Ngày',
-      englishDesc: 'Thành thạo review PR bất đồng bộ, trao đổi giải pháp kiến trúc và họp sprint trực tiếp với đối tác khách hàng châu Âu.'
+      degreeDesc: 'Hệ kỹ sư chính quy 4.5 năm chuyên ngành công nghệ phần mềm và kiến trúc hệ thống.',
+      globalComm: 'Ngoại Ngữ & Giao Tiếp',
+      englishProficiency: 'Tiếng Anh Giao Tiếp & Công Việc',
+      englishSub: 'Tương đương TOEIC ~700 • Họp Daily Sync Hàng Ngày',
+      englishDesc: 'Thường xuyên review PR, trao đổi giải pháp và họp sprint trực tiếp với khách hàng châu Âu.'
     },
     footer: {
-      copyright: 'Ngụy Vạn Thành. Đã đăng ký bản quyền.',
-      tagline: 'Phát triển với React, TypeScript & TailwindCSS. Triển khai trên Mạng lưới Edge Vercel.'
+      copyright: 'Ngụy Vạn Thành. All rights reserved.',
+      tagline: 'Phát triển với React, TypeScript & TailwindCSS. Triển khai trên Vercel.'
     },
     command: {
       placeholder: 'Gõ lệnh hoặc tìm kiếm (ví dụ: Angular, Signals, Next.js, PDF)...',
-      quickActions: 'Tác vụ nhanh',
+      quickActions: 'Thao tác nhanh',
       projectsHeader: 'Dự Án & Kiến Trúc',
       noProjects: 'Không tìm thấy kết quả phù hợp với',
       footerTip: 'Nhấn ESC để đóng • Bấm vào để chọn'
