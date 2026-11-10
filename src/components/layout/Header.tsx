@@ -21,6 +21,36 @@ interface HeaderProps {
   onOpenCommand: () => void;
 }
 
+// Crisp inline SVG flags for universal cross-platform rendering (Windows, macOS, Linux, iOS, Android)
+function VietnamFlag() {
+  return (
+    <svg className="w-5 h-3.5 rounded-[2px] shadow-sm shrink-0 overflow-hidden" viewBox="0 0 30 20" aria-hidden="true">
+      <rect width="30" height="20" fill="#da251d" />
+      <polygon
+        fill="#ff0"
+        points="15,4 16.545,8.755 21.548,8.755 17.501,11.695 19.046,16.45 15,13.51 10.954,16.45 12.499,11.695 8.452,8.755 13.455,8.755"
+      />
+    </svg>
+  );
+}
+
+function UkFlag() {
+  return (
+    <svg className="w-5 h-3.5 rounded-[2px] shadow-sm shrink-0 overflow-hidden" viewBox="0 0 60 30" aria-hidden="true">
+      <clipPath id="uk-clip">
+        <rect width="60" height="30" />
+      </clipPath>
+      <g clipPath="url(#uk-clip)">
+        <rect width="60" height="30" fill="#012169" />
+        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" strokeWidth="6" />
+        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#c8102e" strokeWidth="4" clipPath="url(#uk-clip)" />
+        <path d="M30,0 v30 M0,15 h60" stroke="#fff" strokeWidth="10" />
+        <path d="M30,0 v30 M0,15 h60" stroke="#c8102e" strokeWidth="6" />
+      </g>
+    </svg>
+  );
+}
+
 export function Header({
   scrolled,
   scrollProgress,
@@ -75,22 +105,22 @@ export function Header({
 
         {/* Header Action Controls */}
         <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
-          {/* Prominent Bilingual Flag Switcher Button */}
+          {/* Prominent Bilingual SVG Flag Switcher Button */}
           <button
             onClick={toggleLanguage}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-neutral-100 hover:bg-neutral-200 dark:bg-[#1a1a1a] dark:hover:bg-[#252525] border-2 border-neutral-300 dark:border-[#383838] transition-all ios-press text-neutral-900 dark:text-white shadow-sm ring-1 ring-black/5 dark:ring-white/5"
-            title={lang === 'en' ? "Chuyển sang Tiếng Việt (Tiếng Việt)" : "Switch to English"}
+            className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold bg-neutral-100 hover:bg-neutral-200 dark:bg-[#1a1a1a] dark:hover:bg-[#252525] border-2 border-neutral-300 dark:border-[#383838] transition-all ios-press text-neutral-900 dark:text-white shadow-sm ring-1 ring-black/5 dark:ring-white/5 cursor-pointer"
+            title={lang === 'en' ? "Chuyển sang Tiếng Việt" : "Switch to English"}
             aria-label="Switch Language"
           >
             {lang === 'en' ? (
               <>
-                <span className="text-base leading-none select-none" role="img" aria-label="UK flag">🇬🇧</span>
+                <UkFlag />
                 <span className="font-mono text-[11px] font-extrabold tracking-wider">EN</span>
               </>
             ) : (
               <>
-                <span className="text-base leading-none select-none" role="img" aria-label="Vietnam flag">🇻🇳</span>
-                <span className="font-mono text-[11px] font-extrabold tracking-wider">VI</span>
+                <VietnamFlag />
+                <span className="font-mono text-[11px] font-extrabold tracking-wider text-amber-600 dark:text-amber-400">VI</span>
               </>
             )}
           </button>
