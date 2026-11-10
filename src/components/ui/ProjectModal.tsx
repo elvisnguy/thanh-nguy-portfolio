@@ -25,12 +25,7 @@ export function ProjectModal({ project, onClose, playClick }: ProjectModalProps)
   useEffect(() => {
     if (project) {
       setClosing(false);
-      // Play crisp pop sound on popup reveal
       playClick?.('pop');
-
-      // Lock body scroll and prevent background scroll bouncing
-      const originalStyle = window.getComputedStyle(document.body).overflow;
-      document.body.style.overflow = 'hidden';
 
       const handleKeyDown = (e: KeyboardEvent) => {
         if (e.key === 'Escape') {
@@ -40,7 +35,6 @@ export function ProjectModal({ project, onClose, playClick }: ProjectModalProps)
       window.addEventListener('keydown', handleKeyDown);
 
       return () => {
-        document.body.style.overflow = originalStyle;
         window.removeEventListener('keydown', handleKeyDown);
       };
     }
