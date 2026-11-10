@@ -20,7 +20,7 @@ export function ProjectsSection({ lang, onOpenDetails }: ProjectsSectionProps) {
     'Enterprise Angular': { en: 'Enterprise Angular', vi: 'Angular Doanh Nghiệp' },
     'React & Next.js': { en: 'React & Next.js', vi: 'React & Next.js' },
     'Full-stack & CMS': { en: 'Full-stack & CMS', vi: 'Full-stack & CMS' },
-    'Design Systems': { en: 'Design Systems', vi: 'Hệ Thống Design System' },
+    'Design Systems': { en: 'Design Systems', vi: 'Design Systems' },
   };
 
   const categories = ['All', 'Enterprise Angular', 'React & Next.js', 'Full-stack & CMS', 'Design Systems'];
@@ -44,25 +44,27 @@ export function ProjectsSection({ lang, onOpenDetails }: ProjectsSectionProps) {
           </p>
         </div>
 
-        {/* iOS Segmented Control Category Pill Bar */}
-        <div className="p-1 rounded-full bg-neutral-100 dark:bg-[#141414] border border-neutral-200 dark:border-[#222222] flex items-center gap-1 overflow-x-auto scrollbar-none w-full md:w-auto -mx-4 px-4 md:mx-0 md:px-1 shadow-inner">
-          {categories.map((cat) => {
-            const isSelected = activeCategory === cat;
-            const displayLabel = categoryLabels[cat] ? categoryLabels[cat][lang] : cat;
-            return (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`relative px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-[11px] sm:text-xs font-semibold tracking-wider uppercase transition-all duration-300 shrink-0 whitespace-nowrap ios-press ${
-                  isSelected
-                    ? 'bg-neutral-900 text-white dark:bg-white dark:text-black shadow-lg shadow-black/10 dark:shadow-white/10'
-                    : 'text-neutral-600 hover:text-black dark:text-[#a3a3a3] dark:hover:text-white hover:bg-neutral-200/50 dark:hover:bg-white/[0.04]'
-                }`}
-              >
-                {displayLabel}
-              </button>
-            );
-          })}
+        {/* Category Pill Bar - Responsive with hidden scrollbars & clean edge bounds */}
+        <div className="w-full md:w-auto overflow-hidden">
+          <div className="p-1 rounded-full bg-neutral-100 dark:bg-[#141414] border border-neutral-200 dark:border-[#222222] flex items-center gap-1 overflow-x-auto no-scrollbar scrollbar-none shadow-inner max-w-full">
+            {categories.map((cat) => {
+              const isSelected = activeCategory === cat;
+              const displayLabel = categoryLabels[cat] ? categoryLabels[cat][lang] : cat;
+              return (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  className={`relative px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-[11px] sm:text-xs font-semibold tracking-wider uppercase transition-all duration-300 shrink-0 whitespace-nowrap ios-press ${
+                    isSelected
+                      ? 'bg-neutral-900 text-white dark:bg-white dark:text-black shadow-lg shadow-black/10 dark:shadow-white/10'
+                      : 'text-neutral-600 hover:text-black dark:text-[#a3a3a3] dark:hover:text-white hover:bg-neutral-200/50 dark:hover:bg-white/[0.04]'
+                  }`}
+                >
+                  {displayLabel}
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
 
