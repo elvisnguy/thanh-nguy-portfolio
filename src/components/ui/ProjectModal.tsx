@@ -85,7 +85,7 @@ export function ProjectModal({ project, onClose, playClick }: ProjectModalProps)
               <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-[9px] sm:text-[10px] font-mono tracking-widest uppercase font-semibold border border-indigo-500/20">
                 <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3" /> Architecture Deep-Dive
               </span>
-              <span className="text-[9px] sm:text-[10px] font-mono text-neutral-400 dark:text-[#666666] tracking-wider uppercase truncate">
+              <span className="text-[9px] sm:text-[10px] font-mono text-neutral-600 dark:text-[#a3a3a3] tracking-wider uppercase truncate">
                 &bull; {project.category}
               </span>
             </div>
@@ -93,14 +93,14 @@ export function ProjectModal({ project, onClose, playClick }: ProjectModalProps)
             <h3 className="text-lg sm:text-2xl md:text-3xl font-extrabold text-neutral-900 dark:text-white tracking-tight leading-snug break-words">
               {project.title}
             </h3>
-            <p className="text-[11px] sm:text-xs text-neutral-600 dark:text-[#888888] mt-0.5 font-medium">
+            <p className="text-[11px] sm:text-xs text-neutral-600 dark:text-[#a3a3a3] mt-0.5 font-medium">
               {project.role} &bull; <span className="text-neutral-800 dark:text-[#b5b5b5] font-semibold">{project.timeline}</span>
             </p>
           </div>
 
           <button
             onClick={handleClose}
-            className="p-1.5 sm:p-2.5 rounded-full text-neutral-400 hover:text-neutral-900 dark:hover:text-white bg-neutral-100 hover:bg-neutral-200 dark:bg-[#1c1c1c] dark:hover:bg-[#282828] border border-neutral-200 dark:border-[#333333] transition-all ios-press shrink-0 shadow-sm"
+            className="p-1.5 sm:p-2.5 rounded-full text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white bg-neutral-100 hover:bg-neutral-200 dark:bg-[#1c1c1c] dark:hover:bg-[#282828] border border-neutral-200 dark:border-[#333333] transition-all ios-press shrink-0 shadow-sm"
             aria-label="Close"
           >
             <X className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.2]" />
@@ -112,8 +112,8 @@ export function ProjectModal({ project, onClose, playClick }: ProjectModalProps)
           
           {/* Executive Overview */}
           <div className="animate-stagger-2">
-            <h4 className="font-semibold text-neutral-900 dark:text-neutral-200 mb-1 flex items-center gap-1.5 text-[11px] sm:text-xs uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
-              <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-500 shrink-0" /> Executive Overview
+            <h4 className="font-semibold text-neutral-900 dark:text-neutral-200 mb-1 flex items-center gap-1.5 text-[11px] sm:text-xs uppercase tracking-wider text-neutral-600 dark:text-neutral-400">
+              <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-600 dark:text-emerald-400 shrink-0" /> Executive Overview
             </h4>
             <p className="text-neutral-600 dark:text-[#a3a3a3] leading-relaxed font-light text-xs sm:text-sm">
               {project.summary}
@@ -122,7 +122,7 @@ export function ProjectModal({ project, onClose, playClick }: ProjectModalProps)
 
           {/* Hard Technical Problem */}
           <div className="animate-stagger-3 p-3.5 sm:p-4.5 rounded-xl sm:rounded-2xl bg-rose-500/[0.04] dark:bg-rose-500/[0.06] border border-rose-500/20 dark:border-rose-500/25 transition-all">
-            <h4 className="font-bold text-rose-600 dark:text-rose-400 mb-1 flex items-center gap-1.5 text-[11px] sm:text-xs uppercase tracking-wider">
+            <h4 className="font-bold text-rose-700 dark:text-rose-400 mb-1 flex items-center gap-1.5 text-[11px] sm:text-xs uppercase tracking-wider">
               <AlertCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" /> Core Technical Challenge
             </h4>
             <p className="text-neutral-700 dark:text-[#cccccc] leading-relaxed font-light text-[11px] sm:text-[13px]">
@@ -132,7 +132,7 @@ export function ProjectModal({ project, onClose, playClick }: ProjectModalProps)
 
           {/* Solution & Implementation */}
           <div className="animate-stagger-4 p-3.5 sm:p-4.5 rounded-xl sm:rounded-2xl bg-emerald-500/[0.04] dark:bg-emerald-500/[0.06] border border-emerald-500/20 dark:border-emerald-500/25 transition-all">
-            <h4 className="font-bold text-emerald-700 dark:text-emerald-400 mb-1 flex items-center gap-1.5 text-[11px] sm:text-xs uppercase tracking-wider">
+            <h4 className="font-bold text-emerald-800 dark:text-emerald-400 mb-1 flex items-center gap-1.5 text-[11px] sm:text-xs uppercase tracking-wider">
               <CheckCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" /> Solution & Architecture Pattern
             </h4>
             <p className="text-neutral-700 dark:text-[#cccccc] leading-relaxed font-light text-[11px] sm:text-[13px]">
@@ -143,7 +143,7 @@ export function ProjectModal({ project, onClose, playClick }: ProjectModalProps)
           {/* Engineering Win / Commercial Impact */}
           {project.architectureDetails?.engineeringWin && (
             <div className="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-indigo-500/[0.04] dark:bg-indigo-500/[0.06] border border-indigo-500/20 dark:border-indigo-500/25">
-              <h4 className="font-bold text-indigo-600 dark:text-indigo-400 mb-1 flex items-center gap-1.5 text-[11px] sm:text-xs uppercase tracking-wider">
+              <h4 className="font-bold text-indigo-700 dark:text-indigo-400 mb-1 flex items-center gap-1.5 text-[11px] sm:text-xs uppercase tracking-wider">
                 <Trophy className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" /> Architectural Win & Impact
               </h4>
               <p className="text-neutral-700 dark:text-[#cccccc] leading-relaxed font-light text-[11px] sm:text-[13px]">
@@ -154,7 +154,7 @@ export function ProjectModal({ project, onClose, playClick }: ProjectModalProps)
 
           {/* Tech Stack Pills */}
           <div className="pt-1">
-            <div className="text-[10px] font-mono tracking-widest text-neutral-400 dark:text-[#737373] uppercase mb-1.5">
+            <div className="text-[10px] font-mono tracking-widest text-neutral-600 dark:text-[#a3a3a3] uppercase mb-1.5 font-semibold">
               Verified Production Tech Stack
             </div>
             <div className="flex flex-wrap gap-1.5">
@@ -167,7 +167,7 @@ export function ProjectModal({ project, onClose, playClick }: ProjectModalProps)
 
         {/* Footer Actions - Fixed Sticky at Bottom */}
         <div className="relative z-10 p-3.5 sm:p-5 border-t border-neutral-200/80 dark:border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-3 shrink-0 bg-white/40 dark:bg-[#121212]/40 backdrop-blur-md">
-          <span className="text-[10px] sm:text-[11px] text-neutral-400 dark:text-[#666666] font-mono hidden sm:inline">
+          <span className="text-[10px] sm:text-[11px] text-neutral-600 dark:text-[#888888] font-mono hidden sm:inline">
             ESC or Click outside to dismiss
           </span>
 
