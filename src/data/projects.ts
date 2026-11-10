@@ -142,15 +142,16 @@ export const PROJECTS: Project[] = [
     highlights: [
       'Published and maintained the enterprise UI Component Library (@genieits/component-library) with Storybook, reducing UI bugs by over 30%.',
       'Engineered complex dynamic FormBlocks and nested FormArrays for multi-step invoice flows: draft sales, credit notes, installment payments, multi-currency fee lines, and tax calculations.',
+      'Architected General Ledger (Chart of Accounts) nested data grid with recursive multi-level sub-accounts: solved zero-pagination accounting constraints via CDK Virtual Scrolling (1,500+ lines of custom table architecture), dynamic grid-template-columns column ordering/hiding, and lag-free chevron expansion across massive financial ledger trees.',
       'Architected state management combining NgRx with Angular 19 Signals for fine-grained reactivity and predictable financial data flow.',
       'Implemented i18n multilingual localization with dynamic Right-to-Left (RTL) layout switching for Arabic, Kurdish, and English locales.',
       'Integrated client-side PDF document generation engines (pdf-lib, jsPDF) for instant invoice previews and credit note exports.',
       'Collaborated directly with European product leads and developers in daily English standups and PR reviews.'
     ],
     architectureDetails: {
-      problem: 'Enterprise invoicing demands deeply nested data structures (multi-tier fee lines, partial installment schedules, tax exemption rules) across multi-language locales. Frequent change detection cycles during real-time total recalculations were causing UI latency and memory overhead.',
-      solution: 'Decoupled state using Angular 19 Signals alongside NgRx store selectors for atomic input recalculations. Built modular FormArray sub-components with custom validators, bidirectional (LTR/RTL) styling adapters, and encapsulated reusable design tokens inside an isolated Storybook UI Library.',
-      engineeringWin: 'Eliminated redundant DOM recalculations across 50+ line-item invoices, achieved instant sub-second LTR/RTL switching, slashed memory leaks by 100%, and standardized UI components across all squad modules.'
+      problem: 'Accounting domain strictly forbade pagination on General Ledger / Chart of Accounts tables, demanding all accounts and recursive sub-ledgers render in a single view. Expanding parent chevrons on massive hierarchical datasets while supporting dynamic column reordering/hiding caused DOM freeze, layout shifts, and heavy memory overhead.',
+      solution: 'Architected a custom virtualized hierarchical grid engine using Angular CDK Virtual Scrolling combined with ChangeDetectionStrategy.OnPush, custom trackBy iterators, and memoized CSS Grid template recalculations. Sub-account recursion and expand/collapse states are immutable and handled off-DOM.',
+      engineeringWin: 'Achieved butter-smooth 60fps scrolling and instantaneous chevron expand/collapse across thousands of unpaginated General Ledger account trees with full dynamic column reorder/visibility support.'
     }
   },
   {

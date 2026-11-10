@@ -32,7 +32,7 @@ export function ExperienceSection() {
                 Ho Chi Minh City, Vietnam &bull; Software Technology Consultancy
               </p>
               <p className="text-neutral-600 dark:text-[#a3a3a3] text-xs sm:text-sm leading-relaxed mb-4 font-light">
-                Delivered enterprise web applications across European &amp; Dutch client engagements. Architected 3D CAD visualization (Autodesk APS Forge), complex nested FormBlock / FormArray engines, and real-time CometChat messaging for <strong>Tech2B</strong> (3,940+ commits as Ken Ho). Published enterprise UI Library (Storybook) and drove Angular 19 Signals &amp; NgRx modernization for <strong>Accountia</strong>.
+                Delivered enterprise web applications across European &amp; Dutch client engagements. Architected 3D CAD visualization (Autodesk APS Forge), complex nested FormBlock / FormArray engines, and real-time CometChat messaging for <strong>Tech2B</strong> (3,940+ commits as Ken Ho). Published enterprise UI Library (Storybook), solved zero-pagination <strong>General Ledger nested virtual tables</strong>, and drove Angular 19 Signals &amp; NgRx modernization for <strong>Accountia</strong>.
               </p>
               <div className="flex flex-wrap gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono text-neutral-600 dark:text-[#888888]">
                 <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md bg-neutral-100 dark:bg-[#171717] border border-neutral-200 dark:border-[#282828] text-neutral-900 dark:text-neutral-200 font-medium">Accountia & UI Library (Oct 2023 - Sep 2026 &bull; 3 yrs)</span>
