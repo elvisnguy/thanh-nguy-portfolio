@@ -42,11 +42,11 @@ export function ExperienceSection({ lang }: ExperienceSectionProps) {
               <p className="text-neutral-600 dark:text-[#a3a3a3] text-xs sm:text-sm leading-relaxed mb-4 font-light">
                 {lang === 'vi' ? (
                   <>
-                    Triển khai các ứng dụng web doanh nghiệp quy mô lớn cho các khách hàng châu Âu (Hà Lan). Thiết kế hệ thống xem mô hình 3D CAD (Autodesk APS Forge), engine FormBlock / FormArray lồng nhiều cấp phức tạp và nhắn tin realtime CometChat cho <strong>Tech2B</strong> (hơn 3.940+ commits dưới username Ken Ho). Đóng gói UI Library dùng chung (Storybook), xử lý bài toán <strong>General Ledger nested virtual table</strong> không phân trang và hiện đại hóa hệ thống lên Angular 19 Signals &amp; NgRx cho <strong>Accountia</strong>.
+                    Triển khai các ứng dụng web doanh nghiệp quy mô lớn cho các khách hàng châu Âu (Hà Lan). Thiết kế hệ thống xem mô hình 3D CAD (Autodesk APS Forge), engine FormBlock / FormArray lồng nhiều cấp phức tạp và nhắn tin realtime CometChat cho <strong>Tech2B</strong>. Đóng gói UI Library dùng chung (Storybook), xử lý bài toán <strong>General Ledger nested virtual table</strong> không phân trang và hiện đại hóa hệ thống lên Angular 19 Signals &amp; NgRx cho <strong>Accountia</strong>.
                   </>
                 ) : (
                   <>
-                    Delivered enterprise web applications across European &amp; Dutch client engagements. Architected 3D CAD visualization (Autodesk APS Forge), complex nested FormBlock / FormArray engines, and real-time CometChat messaging for <strong>Tech2B</strong> (3,940+ commits as Ken Ho). Published enterprise UI Library (Storybook), solved zero-pagination <strong>General Ledger nested virtual tables</strong>, and drove Angular 19 Signals &amp; NgRx modernization for <strong>Accountia</strong>.
+                    Delivered enterprise web applications across European &amp; Dutch client engagements. Architected 3D CAD visualization (Autodesk APS Forge), complex nested FormBlock / FormArray engines, and real-time CometChat messaging for <strong>Tech2B</strong>. Published enterprise UI Library (Storybook), solved zero-pagination <strong>General Ledger nested virtual tables</strong>, and drove Angular 19 Signals &amp; NgRx modernization for <strong>Accountia</strong>.
                   </>
                 )}
               </p>

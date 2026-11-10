@@ -172,7 +172,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'tech2b',
     title: 'Tech2B Platform',
-    role: 'Core Frontend Engineer (3,940+ Commits • kenho)',
+    role: 'Core Frontend Engineer',
     timeline: 'Jan 2021 - Sep 2023 (2 Yrs 9 Mos • Core Focus)',
     category: 'Enterprise Angular',
     liveUrl: 'https://aps.autodesk.com/customer-stories/tech2b',
@@ -181,7 +181,7 @@ export const PROJECTS: Project[] = [
     summary: 'Dutch B2B cloud manufacturing ecosystem connecting machinery makers and suppliers with embedded 3D CAD visualization and complex eSourcing workflows.',
     summaryVi: 'Hệ sinh thái sản xuất và gia công cơ khí B2B của Hà Lan, kết nối nhà chế tạo máy móc với các xưởng gia công qua công cụ xem 3D CAD nhúng và quy trình eSourcing.',
     highlights: [
-      'Authored 3,940+ commits as primary frontend contributor on the Dutch manufacturing platform featured as an Autodesk Customer Story.',
+      'Core frontend engineer on the Dutch manufacturing platform officially recognized as an Autodesk Global Customer Story.',
       'Integrated Autodesk Platform Services (APS / Forge Viewer) with custom Three.js extensions for interactive 3D CAD parts viewing, front/back ViewCube controls, and component thematic coloring.',
       'Built multi-tier FormBlock and nested FormArray engines for eSourcing requests, RFQ quotes, order creation, and deep category trees (categories-popover).',
       'Integrated CometChat realtime B2B messaging with context-linked conversation rooms bound to specific quotation and invoice documents.',
@@ -189,7 +189,7 @@ export const PROJECTS: Project[] = [
       'Set up Angular Universal SSR with domino DOM mocking, boosting SEO indexability and cutting initial page load by over 35%.'
     ],
     highlightsVi: [
-      'Đóng góp hơn 3.940+ commits với username kenho, là kỹ sư frontend nòng cốt trên nền tảng được Autodesk đưa vào Customer Story toàn cầu.',
+      'Kỹ sư frontend nòng cốt phát triển nền tảng sản xuất cơ khí số được Autodesk vinh danh làm Global Customer Story.',
       'Tích hợp Autodesk Platform Services (APS Forge Viewer) cùng extension Three.js để xem bản vẽ 3D CAD, điều khiển ViewCube xoay góc nhìn và đổi màu linh kiện tương tác.',
       'Xây dựng các FormBlock đa tầng và FormArray lồng ghép cho luồng eSourcing: gửi yêu cầu báo giá (RFQ), thiết lập thông số kỹ thuật, chọn danh mục nhiều cấp và tạo đơn hàng.',
       'Tích hợp nhắn tin realtime CometChat, gắn phòng chat trực tiếp với ngữ cảnh mã báo giá và tài liệu kỹ thuật liên quan.',
