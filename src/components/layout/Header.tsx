@@ -83,7 +83,7 @@ export function Header({
           className="flex items-center gap-2 sm:gap-3 group ios-press shrink-0 min-w-0"
         >
           <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-neutral-900 text-white dark:bg-white dark:text-black font-extrabold text-[11px] sm:text-xs flex items-center justify-center tracking-tighter group-hover:scale-105 group-hover:rotate-1 transition-all shadow-md shrink-0">
-            NVT
+            {lang === 'vi' ? 'NVT' : 'TN'}
           </span>
           <div className="flex flex-col min-w-0">
             <span className="text-neutral-900 dark:text-white font-bold tracking-tight text-xs sm:text-sm uppercase truncate">
