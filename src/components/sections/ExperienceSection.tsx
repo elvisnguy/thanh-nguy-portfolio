@@ -42,23 +42,23 @@ export function ExperienceSection() {
             </div>
           </div>
 
-          {/* Independent Contracts */}
+          {/* Freelance & Independent Contracts */}
           <div className="relative">
             <span className="absolute -left-[27px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-neutral-400 dark:bg-[#737373] border-4 border-white dark:border-[#0d0d0d]" />
             <div className="p-5 sm:p-7 rounded-2xl bg-white dark:bg-[#121212] border border-neutral-200/90 dark:border-[#222222] hover:border-neutral-400 dark:hover:border-white/30 transition-all duration-300 shadow-[0_2px_12px_rgba(0,0,0,0.04)] dark:shadow-none">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-2 mb-2">
                 <h3 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-white tracking-tight">
-                  National & Higher Education Contracts
+                  Freelance CMS &amp; Frontend Developer
                 </h3>
                 <span className="px-3 py-1 rounded-full bg-neutral-100 dark:bg-[#1c1c1c] border border-neutral-200 dark:border-[#2c2c2c] text-neutral-600 dark:text-[#a3a3a3] text-[11px] sm:text-xs font-mono w-fit">
-                  2025 - 2026
+                  Dec 2025 - May 2026
                 </span>
               </div>
               <p className="text-[11px] sm:text-xs text-neutral-600 dark:text-[#a3a3a3] font-medium tracking-wide uppercase mb-3">
-                National Scale & International University
+                Freelance &bull; Outsourced via VTC
               </p>
               <p className="text-neutral-600 dark:text-[#a3a3a3] text-xs sm:text-sm leading-relaxed font-light">
-                Developed admin CMS interfaces for Vietnam's <strong>National Educational Resource Hub (Trục Học Liệu Quốc Gia)</strong>, and turned Figma designs into pixel-perfect pages for <strong>British University Vietnam (BUV)</strong>.
+                Client: <strong>Trục học liệu số, Nhà xuất bản Giáo dục Việt Nam</strong>, built by <strong>VTC</strong>. Engaged as an outsourced CMS and Frontend Developer via VTC. Built admin CMS interfaces with Laravel Blade and server-side DataTables for tens of thousands of learning resources.
               </p>
             </div>
           </div>
@@ -71,7 +71,7 @@ export function ExperienceSection() {
                 <h3 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-white tracking-tight">
                   HighscoresAI &bull; Test Prep Platform
                 </h3>
-                <span className="px-3 py-1 rounded-full bg-emerald-50 dark:bg-[#1c1c1c] border border-emerald-200 dark:border-[#2c2c2c] text-emerald-600 dark:text-emerald-400 text-[11px] sm:text-xs font-mono w-fit">
+                <span className="px-3 py-1 rounded-full bg-emerald-50 dark:bg-[#1c1c1c] border border-emerald-200 dark:border-[#2c2c2c] text-emerald-700 dark:text-emerald-400 text-[11px] sm:text-xs font-mono w-fit">
                   Current
                 </span>
               </div>

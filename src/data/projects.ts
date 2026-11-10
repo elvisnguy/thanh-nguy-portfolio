@@ -230,23 +230,23 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'truc-hoc-lieu',
-    title: 'Trục Học Liệu Quốc Gia',
+    title: 'Trục học liệu số - NXB Giáo dục Việt Nam',
     role: 'Freelance CMS & Frontend Developer',
     timeline: 'Dec 2025 - May 2026',
     category: 'Full-stack & CMS',
     liveUrl: 'https://giaoducso.nxbgd.vn/',
     urlLabel: 'giaoducso.nxbgd.vn',
     techStack: ['PHP (Laravel)', 'Blade Templates', 'SCSS', 'JavaScript', 'Server-side DataTables', 'RESTful APIs'],
-    summary: 'National educational content repository used by schools, teachers, and administrators across Vietnam to manage and access verified textbooks and materials.',
+    summary: 'Learning-materials hub of Nhà xuất bản Giáo dục Việt Nam, built by VTC. Outsourced CMS and Frontend Developer via VTC.',
     highlights: [
       'Built admin dashboard interfaces and content moderation screens using Laravel Blade templates and SCSS.',
       'Integrated server-side DataTables with search, multi-filter, and bulk actions for managing tens of thousands of resources.',
       'Connected frontend forms with backend REST APIs, adding client and server validation checks.'
     ],
     architectureDetails: {
-      problem: 'Managing and moderating tens of thousands of nationwide curriculum resources without overloading database queries or causing admin browser crashes during bulk moderation.',
+      problem: 'Managing and moderating tens of thousands of digital learning resources without overloading database queries or causing admin browser crashes during bulk moderation.',
       solution: 'Integrated server-side DataTables with debounced AJAX requests, query-indexed pagination, and asynchronous batch approval handlers bound to Laravel REST endpoints.',
-      engineeringWin: 'Snappy sub-second response times across 50,000+ national textbook assets and clean administrative workflows for civil service users.'
+      engineeringWin: 'Snappy sub-second response times across tens of thousands of learning resources and clean administrative workflows for content moderators.'
     }
   }
 ];
