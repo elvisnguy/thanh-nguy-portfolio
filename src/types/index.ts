@@ -3,9 +3,12 @@ import { IconType } from 'react-icons';
 export interface Project {
   id: string;
   title: string;
+  titleVi?: string;
   category: string;
   role: string;
+  roleVi?: string;
   timeline: string;
+  timelineVi?: string;
   summary: string;
   summaryVi?: string;
   highlights: string[];

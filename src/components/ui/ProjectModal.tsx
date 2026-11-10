@@ -50,6 +50,9 @@ export function ProjectModal({ project, lang = 'en', onClose }: ProjectModalProp
     }, 250);
   };
 
+  const title = lang === 'vi' && project.titleVi ? project.titleVi : project.title;
+  const role = lang === 'vi' && project.roleVi ? project.roleVi : project.role;
+  const timeline = lang === 'vi' && project.timelineVi ? project.timelineVi : project.timeline;
   const summary = lang === 'vi' && project.summaryVi ? project.summaryVi : project.summary;
   const problem = (lang === 'vi' && project.architectureDetails?.problemVi) 
     ? project.architectureDetails.problemVi 
@@ -97,10 +100,10 @@ export function ProjectModal({ project, lang = 'en', onClose }: ProjectModalProp
             </div>
 
             <h3 className="text-lg sm:text-2xl md:text-3xl font-extrabold text-neutral-900 dark:text-white tracking-tight leading-snug break-words">
-              {project.title}
+              {title}
             </h3>
             <p className="text-[11px] sm:text-xs text-neutral-600 dark:text-[#a3a3a3] mt-0.5 font-medium">
-              {project.role} &bull; <span className="text-neutral-800 dark:text-[#b5b5b5] font-semibold">{project.timeline}</span>
+              {role} &bull; <span className="text-neutral-800 dark:text-[#b5b5b5] font-semibold">{timeline}</span>
             </p>
           </div>
 

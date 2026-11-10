@@ -23,6 +23,9 @@ export function ProjectCard({ project, idx, lang = 'en', onOpenDetails }: Projec
     cardRef.current.style.setProperty('--mouse-y', `${y}px`);
   };
 
+  const titleText = lang === 'vi' && project.titleVi ? project.titleVi : project.title;
+  const roleText = lang === 'vi' && project.roleVi ? project.roleVi : project.role;
+  const timelineText = lang === 'vi' && project.timelineVi ? project.timelineVi : project.timeline;
   const summaryText = lang === 'vi' && project.summaryVi ? project.summaryVi : project.summary;
   const highlightsList = lang === 'vi' && project.highlightsVi ? project.highlightsVi : project.highlights;
 
@@ -89,10 +92,10 @@ export function ProjectCard({ project, idx, lang = 'en', onOpenDetails }: Projec
         {/* Full-width Title Header */}
         <div className="mb-4">
           <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors tracking-tight leading-snug">
-            {project.title}
+            {titleText}
           </h3>
           <p className="text-xs text-neutral-600 dark:text-[#888888] font-medium mt-1">
-            {project.role} &bull; <span className="text-neutral-800 dark:text-[#b5b5b5]">{project.timeline}</span>
+            {roleText} &bull; <span className="text-neutral-800 dark:text-[#b5b5b5]">{timelineText}</span>
           </p>
         </div>
 
