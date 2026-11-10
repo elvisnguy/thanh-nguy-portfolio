@@ -6,26 +6,26 @@ import {
   ArrowUpRight, 
   ShieldCheck, 
   Trophy, 
-  Terminal,
-  Layers,
   Sparkles
 } from 'lucide-react';
 import { Project } from '../../types';
 import { TechBadge } from './TechBadge';
+import { Language } from '../../hooks/useLanguage';
+import { TRANSLATIONS } from '../../data/translations';
 
 interface ProjectModalProps {
   project: Project | null;
+  lang?: Language;
   onClose: () => void;
-  playClick?: (type?: 'tick' | 'pop' | 'success') => void;
 }
 
-export function ProjectModal({ project, onClose, playClick }: ProjectModalProps) {
+export function ProjectModal({ project, lang = 'en', onClose }: ProjectModalProps) {
   const [closing, setClosing] = useState(false);
+  const t = TRANSLATIONS[lang].projects;
 
   useEffect(() => {
     if (project) {
       setClosing(false);
-      playClick?.('pop');
 
       const handleKeyDown = (e: KeyboardEvent) => {
         if (e.key === 'Escape') {
@@ -38,18 +38,30 @@ export function ProjectModal({ project, onClose, playClick }: ProjectModalProps)
         window.removeEventListener('keydown', handleKeyDown);
       };
     }
-  }, [project, playClick]);
+  }, [project]);
 
   if (!project) return null;
 
   const handleClose = () => {
-    playClick?.('tick');
     setClosing(true);
     setTimeout(() => {
       onClose();
       setClosing(false);
     }, 250);
   };
+
+  const summary = lang === 'vi' && project.summaryVi ? project.summaryVi : project.summary;
+  const problem = (lang === 'vi' && project.architectureDetails?.problemVi) 
+    ? project.architectureDetails.problemVi 
+    : (project.architectureDetails?.problem || "Handling heavy state reactivity and high-density data tables without triggering frame drops or memory leaks across multi-page workflows.");
+  
+  const solution = (lang === 'vi' && project.architectureDetails?.solutionVi) 
+    ? project.architectureDetails.solutionVi 
+    : (project.architectureDetails?.solution || "Re-architected view layer with fine-grained reactivity, decoupled UI components via Storybook, and optimized state lifecycle management.");
+  
+  const engineeringWin = (lang === 'vi' && project.architectureDetails?.engineeringWinVi) 
+    ? project.architectureDetails.engineeringWinVi 
+    : project.architectureDetails?.engineeringWin;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-4 md:p-6 overflow-hidden overscroll-contain">
@@ -77,7 +89,7 @@ export function ProjectModal({ project, onClose, playClick }: ProjectModalProps)
           <div className="min-w-0 pr-2">
             <div className="flex items-center gap-1.5 sm:gap-2 mb-1">
               <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-[9px] sm:text-[10px] font-mono tracking-widest uppercase font-semibold border border-indigo-500/20">
-                <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3" /> Architecture Deep-Dive
+                <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3" /> {t.modalBadge}
               </span>
               <span className="text-[9px] sm:text-[10px] font-mono text-neutral-600 dark:text-[#a3a3a3] tracking-wider uppercase truncate">
                 &bull; {project.category}
@@ -107,41 +119,41 @@ export function ProjectModal({ project, onClose, playClick }: ProjectModalProps)
           {/* Executive Overview */}
           <div className="animate-stagger-2">
             <h4 className="font-semibold text-neutral-900 dark:text-neutral-200 mb-1 flex items-center gap-1.5 text-[11px] sm:text-xs uppercase tracking-wider text-neutral-600 dark:text-neutral-400">
-              <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-600 dark:text-emerald-400 shrink-0" /> Executive Overview
+              <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-600 dark:text-emerald-400 shrink-0" /> {t.executiveOverview}
             </h4>
             <p className="text-neutral-600 dark:text-[#a3a3a3] leading-relaxed font-light text-xs sm:text-sm">
-              {project.summary}
+              {summary}
             </p>
           </div>
 
           {/* Hard Technical Problem */}
           <div className="animate-stagger-3 p-3.5 sm:p-4.5 rounded-xl sm:rounded-2xl bg-rose-500/[0.04] dark:bg-rose-500/[0.06] border border-rose-500/20 dark:border-rose-500/25 transition-all">
             <h4 className="font-bold text-rose-700 dark:text-rose-400 mb-1 flex items-center gap-1.5 text-[11px] sm:text-xs uppercase tracking-wider">
-              <AlertCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" /> Core Technical Challenge
+              <AlertCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" /> {t.coreChallenge}
             </h4>
             <p className="text-neutral-700 dark:text-[#cccccc] leading-relaxed font-light text-[11px] sm:text-[13px]">
-              {project.architectureDetails?.problem || "Handling heavy state reactivity and high-density data tables without triggering frame drops or memory leaks across multi-page workflows."}
+              {problem}
             </p>
           </div>
 
           {/* Solution & Implementation */}
           <div className="animate-stagger-4 p-3.5 sm:p-4.5 rounded-xl sm:rounded-2xl bg-emerald-500/[0.04] dark:bg-emerald-500/[0.06] border border-emerald-500/20 dark:border-emerald-500/25 transition-all">
             <h4 className="font-bold text-emerald-800 dark:text-emerald-400 mb-1 flex items-center gap-1.5 text-[11px] sm:text-xs uppercase tracking-wider">
-              <CheckCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" /> Solution & Architecture Pattern
+              <CheckCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" /> {t.solutionPattern}
             </h4>
             <p className="text-neutral-700 dark:text-[#cccccc] leading-relaxed font-light text-[11px] sm:text-[13px]">
-              {project.architectureDetails?.solution || "Re-architected view layer with fine-grained reactivity, decoupled UI components via Storybook, and optimized state lifecycle management."}
+              {solution}
             </p>
           </div>
 
           {/* Engineering Win / Commercial Impact */}
-          {project.architectureDetails?.engineeringWin && (
+          {engineeringWin && (
             <div className="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-indigo-500/[0.04] dark:bg-indigo-500/[0.06] border border-indigo-500/20 dark:border-indigo-500/25">
               <h4 className="font-bold text-indigo-700 dark:text-indigo-400 mb-1 flex items-center gap-1.5 text-[11px] sm:text-xs uppercase tracking-wider">
-                <Trophy className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" /> Architectural Win & Impact
+                <Trophy className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" /> {t.winImpact}
               </h4>
               <p className="text-neutral-700 dark:text-[#cccccc] leading-relaxed font-light text-[11px] sm:text-[13px]">
-                {project.architectureDetails.engineeringWin}
+                {engineeringWin}
               </p>
             </div>
           )}
@@ -149,7 +161,7 @@ export function ProjectModal({ project, onClose, playClick }: ProjectModalProps)
           {/* Tech Stack Pills */}
           <div className="pt-1">
             <div className="text-[10px] font-mono tracking-widest text-neutral-600 dark:text-[#a3a3a3] uppercase mb-1.5 font-semibold">
-              Verified Production Tech Stack
+              {t.verifiedStack}
             </div>
             <div className="flex flex-wrap gap-1.5">
               {project.techStack.map((tech, idx) => (
@@ -162,7 +174,7 @@ export function ProjectModal({ project, onClose, playClick }: ProjectModalProps)
         {/* Footer Actions - Fixed Sticky at Bottom */}
         <div className="relative z-10 p-3.5 sm:p-5 border-t border-neutral-200/80 dark:border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-3 shrink-0 bg-white/40 dark:bg-[#121212]/40 backdrop-blur-md">
           <span className="text-[10px] sm:text-[11px] text-neutral-600 dark:text-[#888888] font-mono hidden sm:inline">
-            ESC or Click outside to dismiss
+            {t.dismissNote}
           </span>
 
           <div className="flex flex-wrap items-center gap-2">
@@ -171,7 +183,6 @@ export function ProjectModal({ project, onClose, playClick }: ProjectModalProps)
                 href={project.secondaryUrl.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => playClick?.('tick')}
                 className="inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 sm:px-4.5 sm:py-2.5 rounded-full bg-neutral-100 hover:bg-neutral-200 dark:bg-[#1f1f1f] dark:hover:bg-[#2a2a2a] text-neutral-800 dark:text-neutral-200 font-bold text-[11px] sm:text-xs uppercase tracking-wider transition-all border border-neutral-300 dark:border-[#333333] ios-press flex-1 sm:flex-initial text-center"
               >
                 <span>{project.secondaryUrl.label}</span>
@@ -184,10 +195,9 @@ export function ProjectModal({ project, onClose, playClick }: ProjectModalProps)
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => playClick?.('tick')}
                 className="sheen-glow inline-flex items-center justify-center gap-1.5 px-4 py-1.5 sm:px-5 sm:py-2.5 rounded-full bg-neutral-900 hover:bg-black dark:bg-white dark:hover:bg-neutral-100 text-white dark:text-black font-bold text-[11px] sm:text-xs uppercase tracking-wider transition-all ios-press shadow-xl hover:shadow-2xl flex-1 sm:flex-initial text-center"
               >
-                <span>{project.id === 'tech2b' ? 'View Case Study' : 'View Live Showcase'}</span>
+                <span>{project.id === 'tech2b' ? t.viewCaseStudy : t.viewShowcase}</span>
                 <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
               </a>
             )}

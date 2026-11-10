@@ -1,6 +1,6 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
 import { useScrollProgress } from './hooks/useScrollProgress';
-import { useSoundEffects } from './hooks/useSoundEffects';
+import { useLanguage } from './hooks/useLanguage';
 import { useTheme } from './hooks/useTheme';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
@@ -22,7 +22,7 @@ export default function App() {
   const [isCommandOpen, setIsCommandOpen] = useState<boolean>(false);
 
   const { scrolled, scrollProgress } = useScrollProgress();
-  const { soundEnabled, toggleSound, playClick } = useSoundEffects();
+  const { lang, toggleLanguage } = useLanguage();
   const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
@@ -41,36 +41,35 @@ export default function App() {
         scrollProgress={scrollProgress}
         theme={theme}
         toggleTheme={toggleTheme}
-        soundEnabled={soundEnabled}
-        toggleSound={toggleSound}
+        lang={lang}
+        toggleLanguage={toggleLanguage}
         onOpenCommand={() => setIsCommandOpen(true)}
-        playClick={playClick}
       />
 
       {/* Main Sections */}
       <main>
-        <HeroSection playClick={playClick} />
+        <HeroSection lang={lang} />
         <ProjectsSection 
+          lang={lang}
           onOpenDetails={(p) => setActiveModalProject(p)} 
-          playClick={playClick} 
         />
-        <SkillsSection playClick={playClick} />
-        <ExperienceSection />
+        <SkillsSection lang={lang} />
+        <ExperienceSection lang={lang} />
       </main>
 
       {/* Footer */}
-      <Footer playClick={playClick} />
+      <Footer lang={lang} />
 
       {/* Floating Back to Top */}
-      <BackToTop scrolled={scrolled} playClick={playClick} />
+      <BackToTop scrolled={scrolled} />
 
       {/* Project Architecture Deep-Dive Modal (Code-split) */}
       {activeModalProject && (
         <Suspense fallback={null}>
           <ProjectModal 
             project={activeModalProject} 
+            lang={lang}
             onClose={() => setActiveModalProject(null)} 
-            playClick={playClick}
           />
         </Suspense>
       )}
@@ -80,9 +79,9 @@ export default function App() {
         <Suspense fallback={null}>
           <CommandPalette 
             isOpen={isCommandOpen} 
+            lang={lang}
             onClose={() => setIsCommandOpen(false)}
             onSelectProject={(p) => setActiveModalProject(p)}
-            playClick={playClick}
           />
         </Suspense>
       )}

@@ -3,12 +3,10 @@ import { ArrowUp } from 'lucide-react';
 
 interface BackToTopProps {
   scrolled: boolean;
-  playClick?: (type?: 'tick' | 'pop') => void;
 }
 
-export function BackToTop({ scrolled, playClick }: BackToTopProps) {
+export function BackToTop({ scrolled }: BackToTopProps) {
   const scrollToTop = () => {
-    playClick?.('tick');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 

@@ -7,18 +7,20 @@ import {
   ChevronRight 
 } from 'lucide-react';
 import { FaLinkedinIn } from 'react-icons/fa';
+import { Language } from '../../hooks/useLanguage';
+import { TRANSLATIONS } from '../../data/translations';
 
 interface HeroSectionProps {
-  playClick?: (type?: 'tick' | 'pop' | 'success') => void;
+  lang: Language;
 }
 
-export function HeroSection({ playClick }: HeroSectionProps) {
+export function HeroSection({ lang }: HeroSectionProps) {
   const [copiedText, setCopiedText] = useState<string | null>(null);
+  const t = TRANSLATIONS[lang];
 
   const copyToClipboard = (text: string, label: string) => {
     navigator.clipboard.writeText(text);
     setCopiedText(label);
-    playClick?.('success');
     setTimeout(() => setCopiedText(null), 2000);
   };
 
@@ -30,30 +32,25 @@ export function HeroSection({ playClick }: HeroSectionProps) {
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-100 dark:bg-[#141414] border border-neutral-300 dark:border-[#262626] text-xs font-mono shadow-sm">
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
           <span className="tracking-wider uppercase text-[10px] sm:text-[11px] font-semibold text-neutral-700 dark:text-[#b5b5b5]">
-            Frontend Engineer &bull; 5 YOE &bull; Vietnam &bull; EU Remote
+            {t.hero.statusPill}
           </span>
         </div>
 
         {/* Big Editorial Headline */}
         <div className="space-y-3 sm:space-y-4">
           <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold tracking-[-0.04em] leading-[1.08] text-neutral-900 dark:text-white">
-            NGUY VAN THANH. <br />
-            <span className="text-neutral-600 dark:text-[#a3a3a3]">FRONTEND ARCHITECTURE.</span>
+            {t.hero.headlinePrefix} <br />
+            <span className="text-neutral-600 dark:text-[#a3a3a3]">{t.hero.headlineSuffix}</span>
           </h1>
 
           <p className="text-sm sm:text-base md:text-xl text-neutral-600 dark:text-[#a3a3a3] leading-relaxed max-w-2xl font-light">
-            Building and scaling production web applications with <span className="text-neutral-900 dark:text-white font-medium">Angular 19 Signals</span>, <span className="text-neutral-900 dark:text-white font-medium">Next.js</span>, and shared component systems. 5 years of commercial experience with direct European client collaboration.
+            {t.hero.bio}
           </p>
         </div>
 
-        {/* iOS Specular Metrics Grid */}
+        {/* Specular Metrics Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3.5 pt-2">
-          {[
-            { val: '5 YOE', label: 'Commercial Exp' },
-            { val: 'Angular 19', label: 'Signals & Standalone' },
-            { val: 'EU Remote', label: 'Direct Client Alignment' },
-            { val: 'STU Engineer', label: "Information Technology" }
-          ].map((metric, i) => (
+          {t.hero.metrics.map((metric, i) => (
             <div 
               key={i} 
               className="p-3.5 sm:p-5 rounded-2xl bg-white dark:bg-[#141414] border border-neutral-200/90 dark:border-[#222222] hover:border-neutral-400 dark:hover:border-white/40 transition-all duration-300 ios-press-sm shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-none hover:shadow-xl hover:shadow-black/5 dark:hover:shadow-white/[0.02]"
@@ -68,25 +65,23 @@ export function HeroSection({ playClick }: HeroSectionProps) {
           ))}
         </div>
 
-        {/* iOS Fluid Tactile CTAs */}
+        {/* Action CTAs */}
         <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-2">
           <a
             href="https://www.linkedin.com/in/itsthanhnguy/"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => playClick?.('tick')}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-[#0077b5] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#006396] transition-all shadow-lg shadow-[#0077b5]/25 ios-press"
           >
             <FaLinkedinIn className="w-3.5 h-3.5 text-white" role="presentation" aria-hidden="true" />
-            <span>Connect on LinkedIn</span>
+            <span>{t.hero.connectLinkedIn}</span>
           </a>
 
           <a
             href="#projects"
-            onClick={() => playClick?.('tick')}
             className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 sm:px-5 sm:py-3 rounded-full bg-neutral-900 text-white dark:bg-white dark:text-black font-bold text-xs uppercase tracking-wider hover:bg-neutral-800 dark:hover:bg-[#e2e2e2] transition-all shadow-md ios-press"
           >
-            <span>Explore Projects</span>
+            <span>{t.hero.exploreProjects}</span>
             <ChevronRight className="w-3.5 h-3.5" />
           </a>
 
@@ -94,17 +89,15 @@ export function HeroSection({ playClick }: HeroSectionProps) {
             href="/Thanh_Nguy_CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => playClick?.('tick')}
             className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 sm:px-5 sm:py-3 rounded-full bg-white dark:bg-[#171717] hover:bg-neutral-100 dark:hover:bg-[#222222] border border-neutral-300 dark:border-[#2e2e2e] hover:border-neutral-500 text-neutral-900 dark:text-white font-medium text-xs tracking-wider uppercase transition-all ios-press shadow-sm"
           >
-            <FileText className="w-3.5 h-3.5 text-neutral-500 dark:text-[#a3a3a3]" />
-            <span>Resume PDF</span>
+            <FileText className="w-3.5 h-3.5 text-neutral-600 dark:text-[#a3a3a3]" />
+            <span>{t.hero.viewResume}</span>
           </a>
 
           <a
             href="/Thanh_Nguy_CV.docx"
             download="Thanh_Nguy_CV.docx"
-            onClick={() => playClick?.('tick')}
             className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-full bg-white dark:bg-[#171717] hover:bg-neutral-100 dark:hover:bg-[#222222] border border-neutral-300 dark:border-[#2e2e2e] hover:border-neutral-500 text-neutral-600 dark:text-[#a3a3a3] hover:text-black dark:hover:text-white font-medium text-xs tracking-wider uppercase transition-all ios-press shadow-sm"
           >
             <FileDown className="w-3.5 h-3.5" />
@@ -115,8 +108,8 @@ export function HeroSection({ playClick }: HeroSectionProps) {
             onClick={() => copyToClipboard('vanthanhnguy2907@gmail.com', 'email')}
             className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-full bg-transparent hover:bg-neutral-100 dark:hover:bg-[#1a1a1a] text-neutral-600 dark:text-[#888888] hover:text-black dark:hover:text-white text-xs tracking-wider uppercase transition-all border border-transparent hover:border-neutral-300 dark:hover:border-[#2e2e2e] ios-press"
           >
-            {copiedText === 'email' ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
-            <span>{copiedText === 'email' ? 'Copied' : 'Email'}</span>
+            {copiedText === 'email' ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
+            <span>{copiedText === 'email' ? t.hero.emailCopied : t.hero.copyEmail}</span>
           </button>
         </div>
       </div>

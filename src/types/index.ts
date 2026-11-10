@@ -7,7 +7,9 @@ export interface Project {
   role: string;
   timeline: string;
   summary: string;
+  summaryVi?: string;
   highlights: string[];
+  highlightsVi?: string[];
   techStack: string[];
   liveUrl?: string;
   urlLabel?: string;
@@ -17,8 +19,11 @@ export interface Project {
   };
   architectureDetails?: {
     problem: string;
+    problemVi?: string;
     solution: string;
+    solutionVi?: string;
     engineeringWin: string;
+    engineeringWinVi?: string;
   };
 }
 

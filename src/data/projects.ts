@@ -139,6 +139,7 @@ export const PROJECTS: Project[] = [
     },
     techStack: ['Angular 19', 'Signals', 'NgRx', 'RxJS', 'i18n & RTL', 'TypeScript', 'SCSS', 'Storybook', 'Cypress'],
     summary: 'Cloud ERP invoicing and accounting platform designed for multi-currency operations and complex general ledger bookkeeping workflows.',
+    summaryVi: 'Nền tảng ERP kế toán và xuất hóa đơn đám mây phục vụ đa tiền tệ và luồng nghiệp vụ sổ cái tài khoản doanh nghiệp phức tạp.',
     highlights: [
       'Published and maintained the enterprise UI Component Library (@genieits/component-library) with Storybook, reducing UI bugs by over 30%.',
       'Engineered complex dynamic FormBlocks and nested FormArrays for multi-step invoice flows: draft sales, credit notes, installment payments, multi-currency fee lines, and tax calculations.',
@@ -148,10 +149,22 @@ export const PROJECTS: Project[] = [
       'Integrated client-side PDF document generation engines (pdf-lib, jsPDF) for instant invoice previews and credit note exports.',
       'Collaborated directly with European product leads and developers in daily English standups and PR reviews.'
     ],
+    highlightsVi: [
+      'Xuất bản và quản trị thư viện UI Component (@genieits/component-library) với Storybook, giảm hơn 30% lỗi giao diện giữa các nhóm dự án.',
+      'Xây dựng các FormBlock động và FormArray lồng nhiều cấp cho luồng hóa đơn: hóa đơn nháp, phiếu tín dụng, trả góp theo kỳ, dòng phí đa tiền tệ và tự động tính thuế.',
+      'Thiết kế bảng Sổ Cái Tài Khoản (General Ledger) phân cấp lồng nhau: giải quyết bài toán nghiệp vụ cấm phân trang bằng CDK Virtual Scrolling (1.500+ dòng code), sắp xếp/ẩn cột CSS Grid động và mở rộng chevron mượt mà trên cây tài khoản lớn.',
+      'Kết hợp NgRx và Angular 19 Signals tối ưu tính phản ứng ở mức nguyên tử, hạn chế tối đa Change Detection thừa.',
+      'Xây dựng hệ thống đa ngôn ngữ i18n và chuyển đổi giao diện chữ từ phải sang trái (RTL) cho tiếng Ả Rập, Kurd và tiếng Anh.',
+      'Tích hợp thư viện PDF client-side (pdf-lib, jsPDF) cho phép xem trước và xuất hóa đơn điện tử tức thì.',
+      'Làm việc trực tiếp với Product Owner và tech lead châu Âu qua daily standup và review PR bằng tiếng Anh.'
+    ],
     architectureDetails: {
       problem: 'Accounting domain strictly forbade pagination on General Ledger / Chart of Accounts tables, demanding all accounts and recursive sub-ledgers render in a single view. Expanding parent chevrons on massive hierarchical datasets while supporting dynamic column reordering/hiding caused DOM freeze, layout shifts, and heavy memory overhead.',
+      problemVi: 'Nghiệp vụ kế toán nghiêm cấm phân trang trên bảng Sổ cái tài khoản, bắt buộc toàn bộ tài khoản và các sổ con phân nhánh phải hiển thị trong một trang. Thao tác bấm chevron mở rộng nhánh dữ liệu lớn kèm căn chỉnh ẩn/hiện cột gây treo DOM và giật lag nghiêm trọng.',
       solution: 'Architected a custom virtualized hierarchical grid engine using Angular CDK Virtual Scrolling combined with ChangeDetectionStrategy.OnPush, custom trackBy iterators, and memoized CSS Grid template recalculations. Sub-account recursion and expand/collapse states are immutable and handled off-DOM.',
-      engineeringWin: 'Achieved butter-smooth 60fps scrolling and instantaneous chevron expand/collapse across thousands of unpaginated General Ledger account trees with full dynamic column reorder/visibility support.'
+      solutionVi: 'Thiết kế grid ảo phân cấp tùy biến kết hợp Angular CDK Virtual Scrolling, ChangeDetectionStrategy.OnPush, hàm trackBy tối ưu và tính toán lại CSS Grid động. Toàn bộ logic đệ quy tài khoản con được xử lý bất biến ngoài DOM.',
+      engineeringWin: 'Achieved butter-smooth 60fps scrolling and instantaneous chevron expand/collapse across thousands of unpaginated General Ledger account trees with full dynamic column reorder/visibility support.',
+      engineeringWinVi: 'Đạt độ mượt cuộn 60fps tuyệt đối và phản hồi mở/đóng chevron tức thì trên hàng ngàn cây tài khoản sổ cái không phân trang, hỗ trợ đầy đủ đổi thứ tự và ẩn hiện cột.'
     }
   },
   {
@@ -164,6 +177,7 @@ export const PROJECTS: Project[] = [
     urlLabel: 'Autodesk Customer Story',
     techStack: ['Angular', 'Angular Universal (SSR)', 'Autodesk APS (Forge)', '3D CAD Viewer', 'NgRx', 'CometChat', 'TypeScript', 'SCSS', 'RxJS', 'RESTful APIs'],
     summary: 'Dutch B2B cloud manufacturing ecosystem connecting machinery makers and suppliers with embedded 3D CAD visualization and complex eSourcing workflows.',
+    summaryVi: 'Hệ sinh thái sản xuất B2B trên đám mây của Hà Lan kết nối các nhà chế tạo máy móc và xưởng gia công với bộ xem 3D CAD nhúng và luồng eSourcing phức tạp.',
     highlights: [
       'Authored 3,940+ commits as primary frontend contributor on the Dutch manufacturing platform featured as an Autodesk Customer Story.',
       'Integrated Autodesk Platform Services (APS / Forge Viewer) with custom Three.js extensions for interactive 3D CAD parts viewing, front/back ViewCube controls, and component thematic coloring.',
@@ -172,10 +186,21 @@ export const PROJECTS: Project[] = [
       'Architected domain-driven NgRx store partitioning (analytics, company, document, order, message) with LocalStorage sync and freeze protection.',
       'Set up Angular Universal SSR with domino DOM mocking, boosting SEO indexability and cutting initial page load by over 35%.'
     ],
+    highlightsVi: [
+      'Đóng góp hơn 3.940 commits với vai trò kỹ sư frontend chủ lực trên nền tảng chế tạo máy Hà Lan được Autodesk vinh danh làm Customer Story.',
+      'Tích hợp Autodesk Platform Services (APS / Forge Viewer) cùng extension Three.js tùy biến để xem mô hình 3D CAD, xoay ViewCube trước/sau và đổi màu linh kiện tương tác.',
+      'Xây dựng các FormBlock đa tầng và FormArray lồng nhiều cấp cho yêu cầu eSourcing, báo giá RFQ, tạo đơn hàng và cây danh mục sâu.',
+      'Tích hợp chat B2B thời gian thực với CometChat, liên kết phòng chat trực tiếp với ngữ cảnh của từng tài liệu báo giá và hóa đơn.',
+      'Thiết kế kiến trúc NgRx Store phân vùng theo domain (phân tích, công ty, tài liệu, đơn hàng, tin nhắn) đồng bộ LocalStorage an toàn.',
+      'Cấu hình Server-Side Rendering (Angular Universal) với domino giả lập DOM, tăng thứ hạng SEO và giảm hơn 35% thời gian tải trang ban đầu.'
+    ],
     architectureDetails: {
       problem: 'Sharing heavy proprietary 3D CAD blueprints created massive friction for smaller EU manufacturing suppliers lacking expensive software, while complex multi-item quotation requests and real-time negotiations caused severe state synchronization overhead.',
+      problemVi: 'Việc chia sẻ bản vẽ 3D CAD độc quyền nặng nề tạo rào cản lớn cho các xưởng cơ khí nhỏ ở châu Âu không có bản quyền phần mềm đắt đỏ, đồng thời luồng báo giá đa sản phẩm và đàm phán realtime gây áp lực đồng bộ state cực lớn.',
       solution: 'Engineered an in-browser 3D CAD viewer via Autodesk Forge APIs and custom Three.js event listeners. Partitioned client state into dedicated NgRx modules with memoized selectors, and connected real-time CometChat rooms with embedded document contexts.',
-      engineeringWin: 'Empowered thousands of European fabricators to view and quote 3D CAD parts directly in-browser with zero software licenses, achieving official recognition as an Autodesk Global Customer Story.'
+      solutionVi: 'Xây dựng engine xem bản vẽ 3D CAD ngay trong trình duyệt qua Autodesk Forge API và Three.js event listener. Phân tách state thành các module NgRx độc lập với memoized selector và kết nối phòng chat CometChat thời gian thực gắn liền ngữ cảnh tài liệu.',
+      engineeringWin: 'Empowered thousands of European fabricators to view and quote 3D CAD parts directly in-browser with zero software licenses, achieving official recognition as an Autodesk Global Customer Story.',
+      engineeringWinVi: 'Giúp hàng ngàn xưởng sản xuất châu Âu xem và báo giá linh kiện 3D CAD trực tiếp trên trình duyệt mà không cần mua license đắt đỏ, đưa Tech2B trở thành Customer Story tiêu biểu của Autodesk toàn cầu.'
     }
   },
   {
@@ -231,16 +256,26 @@ export const PROJECTS: Project[] = [
     urlLabel: 'buv.edu.vn',
     techStack: ['Next.js 15', 'React 19', 'Turborepo', 'Design System (SOT)', 'Playwright Pixelmatch', 'SCSS', 'TypeScript'],
     summary: 'Flagship digital portal for British University Vietnam built with a Turborepo monorepo architecture and an isolated Source of Truth (/sot) design system gallery.',
+    summaryVi: 'Cổng thông tin kỹ thuật số của Đại học Anh Quốc Việt Nam (BUV) xây dựng trên kiến trúc Turborepo monorepo với phòng trưng bày Design System Source of Truth (/sot) độc lập.',
     highlights: [
       'Built and maintained the dedicated Source of Truth (/sot) component gallery, ensuring real production UI components never drift from official British university brand standards.',
       'Developed 20+ atomic and composite SOT presentation components (accordion, hero, course highlights, campus gallery, admissions process, contact block).',
       'Configured automated visual regression and design-parity workflows using Playwright, Pixelmatch, and Sharp to enforce pixel-perfect fidelity against Figma.',
       'Delivered frontend modules inside a modern Turborepo monorepo setup on Next.js 15 and React 19.'
     ],
+    highlightsVi: [
+      'Phát triển và quản trị phòng trưng bày linh kiện Source of Truth (/sot), đảm bảo các component production không bao giờ bị lệch khỏi quy chuẩn nhận diện của trường đại học Anh Quốc.',
+      'Hiện thực hơn 20 component trình diễn chuẩn SOT (accordion, hero, điểm nổi bật khóa học, thư viện ảnh khuôn viên, quy trình tuyển sinh, khối liên hệ).',
+      'Cấu hình quy trình kiểm thử độ khớp thiết kế (design-parity) tự động với Playwright, Pixelmatch và Sharp nhằm đảm bảo độ chính xác pixel-perfect so với Figma.',
+      'Bàn giao các module frontend trong cấu trúc Turborepo monorepo hiện đại chạy trên Next.js 15 và React 19.'
+    ],
     architectureDetails: {
       problem: 'Strict British higher-education visual guidelines required 100% design parity without regressions across hundreds of course offerings and marketing variants, while preventing component drift between design mockups and production releases.',
+      problemVi: 'Tiêu chuẩn nhận diện khắt khe của trường đại học Anh Quốc đòi hỏi độ chuẩn xác thiết kế 100% không phát sinh lỗi lệch giao diện qua hàng trăm khóa học, đồng thời phải ngăn chặn sự sai lệch giữa bản vẽ và code release.',
       solution: 'Constructed an in-app Source of Truth gallery (/sot) that imports real production components wrapped in design token inspectors, coupled with automated Playwright pixelmatch tests on CI.',
-      engineeringWin: 'Zero visual regressions across all viewport breakpoints and a single source of truth component showcase accessible to designers and university stakeholders.'
+      solutionVi: 'Xây dựng phòng trưng bày Source of Truth (/sot) trực tiếp trong app, import các component thật được bọc trong bộ thanh tra design token, kết hợp kiểm thử pixelmatch tự động bằng Playwright trên CI.',
+      engineeringWin: 'Zero visual regressions across all viewport breakpoints and a single source of truth component showcase accessible to designers and university stakeholders.',
+      engineeringWinVi: 'Không phát sinh lỗi lệch giao diện trên mọi kích thước màn hình, tạo ra kho trưng bày component quy chuẩn cho cả designer và các bên liên quan tại trường đại học.'
     }
   },
   {
@@ -253,16 +288,26 @@ export const PROJECTS: Project[] = [
     urlLabel: 'giaoducso.nxbgd.vn',
     techStack: ['PHP (Laravel)', 'Blade Templates', 'AI Grading API (VTC AI)', 'SCSS', 'Server-side DataTables', 'RESTful APIs'],
     summary: 'National learning-materials hub of Nhà xuất bản Giáo dục Việt Nam, built by VTC. Features admin CMS moderation and teacher portal integration with VTC AI automatic scoring engines.',
+    summaryVi: 'Trục học liệu số của Nhà xuất bản Giáo dục Việt Nam do VTC phát triển. Bao gồm CMS quản trị kiểm duyệt nội dung và cổng giáo viên tích hợp engine chấm thi tự động VTC AI.',
     highlights: [
       'Built admin dashboard interfaces and content moderation screens using Laravel Blade templates and SCSS.',
       'Integrated server-side DataTables with search, multi-filter, and bulk actions for managing tens of thousands of resources.',
       'Connected Teacher Portal (webgiaovien) with VTC AI backend microservices for automated OCR text extraction and AI quiz/essay grading (VtcAiService).',
       'Engineered structured hierarchical curriculum trees using nested sets for nationwide textbook and question set taxonomies.'
     ],
+    highlightsVi: [
+      'Xây dựng các màn hình quản trị và kiểm duyệt nội dung học liệu sử dụng Laravel Blade template và SCSS.',
+      'Tích hợp server-side DataTables hỗ trợ tìm kiếm, lọc đa tiêu chí và xử lý hàng loạt trên hàng chục ngàn tài nguyên.',
+      'Kết nối Cổng giáo viên (webgiaovien) với microservice backend VTC AI để bóc tách văn bản qua OCR và chấm bài trắc nghiệm/tự luận tự động (VtcAiService).',
+      'Thiết kế cây cấu trúc chương trình học phân cấp sử dụng nested set cho kho sách giáo khoa và ngân hàng câu hỏi trên toàn quốc.'
+    ],
     architectureDetails: {
       problem: 'Handling nationwide curriculum resources while orchestrating multi-part asynchronous AI exam scoring (OCR document scanning + automated grading) without blocking web workers or timing out teacher sessions.',
+      problemVi: 'Quản lý kho học liệu quy mô quốc gia đồng thời điều phối luồng chấm thi AI bất đồng bộ nhiều bước (scan OCR tài liệu + chấm điểm) mà không gây nghẽn worker hay làm gián đoạn phiên làm việc của giáo viên.',
       solution: 'Integrated server-side DataTables with query-indexed pagination, built dedicated teacher portal assessment modules, and connected asynchronous multipart payloads to VTC AI grading endpoints with timeout resilience.',
-      engineeringWin: 'Sub-second response times across 700k+ learning assets and automated AI grading workflows serving thousands of teachers on the webgiaovien portal.'
+      solutionVi: 'Tích hợp server-side DataTables tối ưu index truy vấn, xây dựng các module khảo thí trên cổng giáo viên và gửi payload multipart bất đồng bộ đến endpoint VTC AI với cơ chế chịu lỗi timeout.',
+      engineeringWin: 'Sub-second response times across 700k+ learning assets and automated AI grading workflows serving thousands of teachers on the webgiaovien portal.',
+      engineeringWinVi: 'Thời gian phản hồi dưới 1 giây trên hơn 700.000 học liệu số và vận hành luồng chấm thi AI tự động phục vụ hàng ngàn giáo viên trên cổng webgiaovien.'
     }
   }
 ];
