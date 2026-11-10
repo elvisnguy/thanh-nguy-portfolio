@@ -18,9 +18,10 @@ import {
   SiFigma,
   SiHtml5,
   SiAuth0,
-  SiChartdotjs
+  SiChartdotjs,
+  SiAutodesk
 } from 'react-icons/si';
-import { TbTopologyStar3, TbCpu, TbRobot, TbCalendar, TbCode, TbCloud, TbLanguage } from 'react-icons/tb';
+import { TbTopologyStar3, TbCpu, TbRobot, TbCalendar, TbCode, TbCloud, TbLanguage, TbCube } from 'react-icons/tb';
 import { Project, SkillGroup } from '../types';
 
 export const TECH_MAP: Record<string, { icon: any; color: string }> = {
@@ -31,6 +32,9 @@ export const TECH_MAP: Record<string, { icon: any; color: string }> = {
   'Standalone Components': { icon: SiAngular, color: '#dd0031' },
   'NgRx': { icon: SiNgrx, color: '#ba2bd3' },
   'i18n & RTL': { icon: TbLanguage, color: '#0ea5e9' },
+  'Autodesk APS (Forge)': { icon: SiAutodesk, color: '#0696d7' },
+  '3D CAD Viewer': { icon: TbCube, color: '#0284c7' },
+  'CometChat': { icon: TbTopologyStar3, color: '#7c3aed' },
   'RxJS': { icon: TbTopologyStar3, color: '#d946ef' },
   'TypeScript': { icon: SiTypescript, color: '#3178c6' },
   'JavaScript': { icon: SiJavascript, color: '#f7df1e' },
@@ -136,38 +140,41 @@ export const PROJECTS: Project[] = [
     techStack: ['Angular 19', 'Signals', 'NgRx', 'RxJS', 'i18n & RTL', 'TypeScript', 'SCSS', 'Storybook', 'Cypress'],
     summary: 'Cloud ERP invoicing and accounting platform designed for multi-currency operations and complex general ledger bookkeeping workflows.',
     highlights: [
-      'Built and maintained the shared UI Component Library with Storybook, reducing UI bugs by over 30%.',
+      'Published and maintained the enterprise UI Component Library (@genieits/component-library) with Storybook, reducing UI bugs by over 30%.',
+      'Engineered complex dynamic FormBlocks and nested FormArrays for multi-step invoice flows: draft sales, credit notes, installment payments, multi-currency fee lines, and tax calculations.',
       'Architected state management combining NgRx with Angular 19 Signals for fine-grained reactivity and predictable financial data flow.',
       'Implemented i18n multilingual localization with dynamic Right-to-Left (RTL) layout switching for Arabic, Kurdish, and English locales.',
-      'Created custom unsubscription utilities (takeUntilDestroy) and directives to prevent RxJS memory leaks.',
+      'Integrated client-side PDF document generation engines (pdf-lib, jsPDF) for instant invoice previews and credit note exports.',
       'Collaborated directly with European product leads and developers in daily English standups and PR reviews.'
     ],
     architectureDetails: {
-      problem: 'Frequent global Change Detection triggered by high-frequency financial updates was causing UI frame drops, while multi-language requirements (including RTL text direction for Arabic/Kurdish) introduced layout reflows and state synchronization issues across complex transaction grids.',
-      solution: 'Re-architected the view layer using Angular 19 Signals alongside NgRx store selectors for granular cell reactivity. Built dynamic i18n locale services with bidirectional (LTR/RTL) styling adapters, and encapsulated reusable design tokens inside an isolated Storybook UI Library.',
-      engineeringWin: 'Eliminated unnecessary DOM re-renders, achieved seamless zero-latency language/RTL switching, slashed memory leaks by 100%, and cut UI regression bugs by over 30% across multiple client squads.'
+      problem: 'Enterprise invoicing demands deeply nested data structures (multi-tier fee lines, partial installment schedules, tax exemption rules) across multi-language locales. Frequent change detection cycles during real-time total recalculations were causing UI latency and memory overhead.',
+      solution: 'Decoupled state using Angular 19 Signals alongside NgRx store selectors for atomic input recalculations. Built modular FormArray sub-components with custom validators, bidirectional (LTR/RTL) styling adapters, and encapsulated reusable design tokens inside an isolated Storybook UI Library.',
+      engineeringWin: 'Eliminated redundant DOM recalculations across 50+ line-item invoices, achieved instant sub-second LTR/RTL switching, slashed memory leaks by 100%, and standardized UI components across all squad modules.'
     }
   },
   {
     id: 'tech2b',
     title: 'Tech2B Platform',
-    role: 'Frontend / Web Developer',
+    role: 'Core Frontend Engineer (3,940+ Commits • kenho)',
     timeline: 'Jan 2021 - Sep 2023 (2 Yrs 9 Mos • Core Focus)',
     category: 'Enterprise Angular',
     liveUrl: 'https://aps.autodesk.com/customer-stories/tech2b',
     urlLabel: 'Autodesk Customer Story',
-    techStack: ['Angular', 'Angular Universal (SSR)', 'TypeScript', 'SCSS', 'RxJS', 'Node.js', 'RESTful APIs'],
-    summary: 'B2B platform for manufacturing teams to share 3D CAD files, request quotes, and manage suppliers.',
+    techStack: ['Angular', 'Angular Universal (SSR)', 'Autodesk APS (Forge)', '3D CAD Viewer', 'NgRx', 'CometChat', 'TypeScript', 'SCSS', 'RxJS', 'RESTful APIs'],
+    summary: 'Dutch B2B cloud manufacturing ecosystem connecting machinery makers and suppliers with embedded 3D CAD visualization and complex eSourcing workflows.',
     highlights: [
-      'Featured as an Autodesk Customer Story for innovation in engineering workflow automation.',
-      'Set up Angular Universal for public catalog pages, speeding up initial page load by over 35% and improving SEO ranking.',
-      'Built multi-step quote request and order checkout flows with Angular Reactive Forms.',
-      'Created HTTP interceptors for JWT token handling, caching, and unified API error handling.'
+      'Authored 3,940+ commits as primary frontend contributor on the Dutch manufacturing platform featured as an Autodesk Customer Story.',
+      'Integrated Autodesk Platform Services (APS / Forge Viewer) with custom Three.js extensions for interactive 3D CAD parts viewing, front/back ViewCube controls, and component thematic coloring.',
+      'Built multi-tier FormBlock and nested FormArray engines for eSourcing requests, RFQ quotes, order creation, and deep category trees (categories-popover).',
+      'Integrated CometChat realtime B2B messaging with context-linked conversation rooms bound to specific quotation and invoice documents.',
+      'Architected domain-driven NgRx store partitioning (analytics, company, document, order, message) with LocalStorage sync and freeze protection.',
+      'Set up Angular Universal SSR with domino DOM mocking, boosting SEO indexability and cutting initial page load by over 35%.'
     ],
     architectureDetails: {
-      problem: 'B2B engineering catalog pages suffered from slow First Contentful Paint (FCP) and poor SEO indexability due to client-side rendering bottlenecks.',
-      solution: 'Configured Angular Universal Server-Side Rendering (SSR) with TransferState caching to eliminate duplicate API requests between Node.js server and client hydration.',
-      engineeringWin: 'Accelerated initial page load speed by over 35%, dramatically boosted Google SEO rankings, and became an official Autodesk Customer Story.'
+      problem: 'Sharing heavy proprietary 3D CAD blueprints created massive friction for smaller EU manufacturing suppliers lacking expensive software, while complex multi-item quotation requests and real-time negotiations caused severe state synchronization overhead.',
+      solution: 'Engineered an in-browser 3D CAD viewer via Autodesk Forge APIs and custom Three.js event listeners. Partitioned client state into dedicated NgRx modules with memoized selectors, and connected real-time CometChat rooms with embedded document contexts.',
+      engineeringWin: 'Empowered thousands of European fabricators to view and quote 3D CAD parts directly in-browser with zero software licenses, achieving official recognition as an Autodesk Global Customer Story.'
     }
   },
   {
@@ -216,22 +223,23 @@ export const PROJECTS: Project[] = [
   {
     id: 'buv',
     title: 'British University Vietnam (BUV)',
-    role: 'Freelance Frontend Developer',
+    role: 'Frontend Engineer (SOT Design Systems & Monorepo)',
     timeline: 'Jul 2026 - Aug 2026',
-    category: 'Design Systems',
+    category: 'Design Systems & Next.js',
     liveUrl: 'https://www.buv.edu.vn',
     urlLabel: 'buv.edu.vn',
-    techStack: ['Modern Web', 'SCSS', 'Pixel-perfect Responsive', 'Figma-to-Code', 'Semantic HTML5'],
-    summary: 'Administrative web portal for British University Vietnam, following university brand guidelines and design specifications.',
+    techStack: ['Next.js 15', 'React 19', 'Turborepo', 'Design System (SOT)', 'Playwright Pixelmatch', 'SCSS', 'TypeScript'],
+    summary: 'Flagship digital portal for British University Vietnam built with a Turborepo monorepo architecture and an isolated Source of Truth (/sot) design system gallery.',
     highlights: [
-      'Converted detailed Figma mockups into responsive, clean HTML/SCSS with high accuracy across desktop and mobile screens.',
-      'Built reusable page templates serving as the base layout for academic notices and student documentation.',
-      'Worked as one of the core frontend developers alongside international designers to deliver on a tight schedule.'
+      'Built and maintained the dedicated Source of Truth (/sot) component gallery, ensuring real production UI components never drift from official British university brand standards.',
+      'Developed 20+ atomic and composite SOT presentation components (accordion, hero, course highlights, campus gallery, admissions process, contact block).',
+      'Configured automated visual regression and design-parity workflows using Playwright, Pixelmatch, and Sharp to enforce pixel-perfect fidelity against Figma.',
+      'Delivered frontend modules inside a modern Turborepo monorepo setup on Next.js 15 and React 19.'
     ],
     architectureDetails: {
-      problem: 'Complex, typography-heavy design layouts adhering strictly to British higher education branding, requiring 100% pixel-perfect fidelity across mobile, tablet, and retina displays.',
-      solution: 'Authored semantic, BEM-structured SCSS with fluid clamp() typography and modular layout partials. Collaborated in continuous Figma inspect syncs to ensure exact margin, color contrast, and accessibility compliance.',
-      engineeringWin: 'Zero layout regressions during comprehensive UAT across all standard viewports and browsers, delivered ahead of academic publishing deadline.'
+      problem: 'Strict British higher-education visual guidelines required 100% design parity without regressions across hundreds of course offerings and marketing variants, while preventing component drift between design mockups and production releases.',
+      solution: 'Constructed an in-app Source of Truth gallery (/sot) that imports real production components wrapped in design token inspectors, coupled with automated Playwright pixelmatch tests on CI.',
+      engineeringWin: 'Zero visual regressions across all viewport breakpoints and a single source of truth component showcase accessible to designers and university stakeholders.'
     }
   },
   {
@@ -242,17 +250,18 @@ export const PROJECTS: Project[] = [
     category: 'Full-stack & CMS',
     liveUrl: 'https://giaoducso.nxbgd.vn/',
     urlLabel: 'giaoducso.nxbgd.vn',
-    techStack: ['PHP (Laravel)', 'Blade Templates', 'SCSS', 'JavaScript', 'Server-side DataTables', 'RESTful APIs'],
-    summary: 'Learning-materials hub of Nhà xuất bản Giáo dục Việt Nam, built by VTC. Outsourced CMS and Frontend Developer via VTC.',
+    techStack: ['PHP (Laravel)', 'Blade Templates', 'AI Grading API (VTC AI)', 'SCSS', 'Server-side DataTables', 'RESTful APIs'],
+    summary: 'National learning-materials hub of Nhà xuất bản Giáo dục Việt Nam, built by VTC. Features admin CMS moderation and teacher portal integration with VTC AI automatic scoring engines.',
     highlights: [
       'Built admin dashboard interfaces and content moderation screens using Laravel Blade templates and SCSS.',
       'Integrated server-side DataTables with search, multi-filter, and bulk actions for managing tens of thousands of resources.',
-      'Connected frontend forms with backend REST APIs, adding client and server validation checks.'
+      'Connected Teacher Portal (webgiaovien) with VTC AI backend microservices for automated OCR text extraction and AI quiz/essay grading (VtcAiService).',
+      'Engineered structured hierarchical curriculum trees using nested sets for nationwide textbook and question set taxonomies.'
     ],
     architectureDetails: {
-      problem: 'Managing and moderating tens of thousands of digital learning resources without overloading database queries or causing admin browser crashes during bulk moderation.',
-      solution: 'Integrated server-side DataTables with debounced AJAX requests, query-indexed pagination, and asynchronous batch approval handlers bound to Laravel REST endpoints.',
-      engineeringWin: 'Snappy sub-second response times across tens of thousands of learning resources and clean administrative workflows for content moderators.'
+      problem: 'Handling nationwide curriculum resources while orchestrating multi-part asynchronous AI exam scoring (OCR document scanning + automated grading) without blocking web workers or timing out teacher sessions.',
+      solution: 'Integrated server-side DataTables with query-indexed pagination, built dedicated teacher portal assessment modules, and connected asynchronous multipart payloads to VTC AI grading endpoints with timeout resilience.',
+      engineeringWin: 'Sub-second response times across 700k+ learning assets and automated AI grading workflows serving thousands of teachers on the webgiaovien portal.'
     }
   }
 ];

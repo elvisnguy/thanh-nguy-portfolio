@@ -226,13 +226,13 @@
       <span>1. Accountia — Cloud Accounting Platform & Enterprise UI Library</span>
       <span class="company-meta">2023 – 2026 | Team: 10–15</span>
     </div>
-    <div class="project-tech">Tech: Angular 19, Signals, Standalone Components, RxJS, TypeScript, SCSS, Storybook, Cypress</div>
+    <div class="project-tech">Tech: Angular 19, Signals, NgRx, RxJS, i18n & RTL, TypeScript, SCSS, Storybook, pdf-lib, Cypress</div>
     <ul>
-      <li><strong>Core UI Library Architecture:</strong> Architected and published a centralized Enterprise UI Component Library serving as the single source of truth for UI components across cross-functional squads.</li>
-      <li><strong>Storybook Isolation:</strong> Integrated Storybook to document and test reusable components (modals, complex form controls, data grids) independently from core business logic, reducing UI regression bugs by over 30%.</li>
-      <li><strong>Angular 19 & Signals:</strong> Spearheaded the upgrade to Angular 19 Standalone Components and leveraged Signals to optimize fine-grained reactivity, eliminating redundant change detection on dense numeric financial grids.</li>
-      <li><strong>Memory Management:</strong> Enforced deterministic RxJS unsubscription patterns (takeUntilDestroy) across component lifecycles to prevent memory leaks in continuous financial streams.</li>
-      <li><strong>EU Client Remote Collaboration:</strong> Collaborated directly with European product stakeholders in English sprint groomings, architectural reviews, and asynchronous remote workflows.</li>
+      <li><strong>Enterprise UI Component Library Owner:</strong> Published and maintained the standalone company UI component library (@genieits/component-library) with Storybook, Chromatic, and ng-packagr, reducing UI regression bugs by over 30% across cross-functional squads.</li>
+      <li><strong>Complex FormBlocks & Multi-Tier Invoice Workflows:</strong> Engineered dynamic FormBlocks and nested FormArrays managing complex invoicing flows: sales drafts, credit notes, partial installment schedules, multi-currency fee lines, and real-time tax recalculations.</li>
+      <li><strong>Angular 19 & Signals Modernization:</strong> Upgraded core modules to Angular 19 Standalone Components, leveraging Angular Signals alongside NgRx store selectors for atomic reactivity on dense financial grids.</li>
+      <li><strong>i18n & Bidirectional RTL Layout:</strong> Implemented angular-l10n localization supporting English, Arabic, and Kurdish with dynamic Right-to-Left (RTL) styling and zero layout reflows.</li>
+      <li><strong>Client-Side Document Engines:</strong> Integrated pdf-lib and jsPDF for instant in-browser financial previews, print layouts, and digital invoice generation.</li>
     </ul>
   </div>
 
@@ -254,14 +254,17 @@
   <!-- Project 3: Tech2B -->
   <div class="project-item">
     <div class="project-header">
-      <span>3. Tech2B Platform — B2B Commerce & Workflow System</span>
-      <span class="company-meta">2021 – 2023 | Team: 4</span>
+      <span>3. Tech2B Platform — Dutch Manufacturing B2B Ecosystem</span>
+      <span class="company-meta">2021 – 2023 | 3,940+ Commits (kenho) | Core Frontend Lead</span>
     </div>
-    <div class="project-tech">Tech: Angular, Angular Universal (SSR), TypeScript, SCSS, RxJS, Node.js, RESTful APIs</div>
+    <div class="project-tech">Tech: Angular, Angular Universal (SSR), Autodesk APS (Forge 3D CAD), NgRx, CometChat, Google Maps Clusterer, ApexCharts</div>
     <ul>
-      <li><strong>Angular Universal SSR:</strong> Implemented Server-Side Rendering with Angular Universal for public product catalogs, slashing initial load latency by over 35% and boosting SEO indexing for B2B search discovery.</li>
-      <li><strong>Reactive State & Forms:</strong> Developed complex multi-step reactive checkout workflows and automated supplier inquiry handling.</li>
-      <li><strong>Resilient Networking:</strong> Engineered centralized HTTP interceptors for automatic JWT token injection, caching, and error handling.</li>
+      <li><strong>Core Frontend Contributor:</strong> Authored 3,940+ commits driving frontend development for the Dutch manufacturing platform officially recognized as an <strong>Autodesk Customer Story</strong>.</li>
+      <li><strong>In-Browser 3D CAD Engine (Autodesk APS / Forge):</strong> Integrated Autodesk Platform Services with custom Three.js extensions (theming colors, ViewCube UI front/back, selection events), allowing thousands of EU suppliers to inspect 3D engineering models without expensive CAD licenses.</li>
+      <li><strong>Multi-Level FormBlocks & Deep Categories:</strong> Built complex nested FormArrays and dynamic categories popovers for eSourcing requests, RFQ quotes, order creation, and multi-tier manufacturing specifications.</li>
+      <li><strong>Realtime B2B Messaging (CometChat):</strong> Integrated CometChat Pro with document-linked discussion rooms bound directly to specific quotations, purchase orders, and technical drawings.</li>
+      <li><strong>Domain-Driven NgRx Store:</strong> Partitioned client state into dedicated store modules (analytics, company, document, order, message) with LocalStorage sync and memoized selectors.</li>
+      <li><strong>Angular Universal SSR & Maps Clustering:</strong> Configured SSR with domino mocking for 35% faster initial page loads and superior SEO; integrated Google Maps clusterer for thousands of EU manufacturing workshops.</li>
     </ul>
   </div>
 </div>
@@ -278,7 +281,7 @@
     <div class="project-tech">Tech: Next.js (App Router), TypeScript, TailwindCSS, CodeMirror 6, FullCalendar, dnd-kit, AI/LLM, Git Worktrees</div>
     <ul>
       <li><strong>Standardized Exam Prep:</strong> Developed modular assessment engines supporting timed mock exams, multi-section routing, and question flagging conforming strictly to standardized digital testing patterns (CollegeBoard BlueBook specs).</li>
-      <li><strong>In-Browser Code Editor:</strong> Integrated CodeMirror 6 (multi-language: Python, Java, C++, JS) with real-time autocompletion, linting, and sub-second feedback via backend execution sandbox for AP Computer Science curricula.</li>
+      <li><strong>In-Browser Code Editor & Terminal:</strong> Integrated CodeMirror 6 (Python, Java, C++, JS) with real-time autocompletion, linting, and xterm.js terminal integration for AP Computer Science curricula.</li>
       <li><strong>Clean Architecture & Worktrees:</strong> Applied strict Clean Code patterns across 30+ domain modules; utilized Git Worktrees for concurrent feature branch development during rapid release sprints.</li>
     </ul>
   </div>
@@ -286,28 +289,28 @@
   <!-- Project 5: Trục Học Liệu Quốc Gia -->
   <div class="project-item">
     <div class="project-header">
-      <span>Trục Học Liệu Quốc Gia (giaoducso) — National Educational Resource Hub</span>
-      <span class="company-meta">Dec 2025 – May 2026 | Team: 20–30</span>
+      <span>Trục học liệu số - NXB Giáo dục Việt Nam (Hợp tác cùng VTC)</span>
+      <span class="company-meta">Dec 2025 – May 2026 | Outsourced via VTC</span>
     </div>
-    <div class="project-tech">Tech: PHP (Laravel), Blade Templates, SCSS, JavaScript, Server-side DataTables, RESTful APIs</div>
+    <div class="project-tech">Tech: PHP (Laravel), Blade Templates, VTC AI Grading APIs, Server-side DataTables, S3, Redis</div>
     <ul>
       <li><strong>Modular Admin CMS:</strong> Developed clean, modular administration panels and management views using Laravel Blade templates and SCSS for national-scale educational assets.</li>
-      <li><strong>Server-Side DataTables:</strong> Implemented dynamic DataTables with server-side pagination, multi-criteria filtering, and bulk operations ensuring high-performance handling of vast resource libraries.</li>
-      <li><strong>API Consumption:</strong> Collaborated with backend engineers to bind RESTful endpoints into administrative forms with strict data integrity validation.</li>
+      <li><strong>Server-Side DataTables & Nested Sets:</strong> Implemented dynamic DataTables with server-side pagination and multi-criteria filtering; handled hierarchical curriculum taxonomies with nested set trees across 700k+ learning resources.</li>
+      <li><strong>AI Grading & OCR Integration:</strong> Connected the Teacher Portal (webgiaovien) with VTC AI backend microservices for automated document OCR extraction and automatic quiz/essay scoring (VtcAiService).</li>
     </ul>
   </div>
 
   <!-- Project 6: BUV -->
   <div class="project-item">
     <div class="project-header">
-      <span>British University Vietnam (BUV) — Flagship Digital Portal & SOT System</span>
-      <span class="company-meta">Jul 2026 – Aug 2026 | Team: ~20 (Design Studio + 2–3 Devs)</span>
+      <span>British University Vietnam (BUV) — Flagship Portal & SOT Design System</span>
+      <span class="company-meta">Jul 2026 – Aug 2026 | Turborepo Monorepo (Next.js 15 & React 19)</span>
     </div>
-    <div class="project-tech">Tech: Modern Web Frontend, SCSS, Responsive Web Design, Figma-to-Code, Semantic HTML5</div>
+    <div class="project-tech">Tech: Next.js 15, React 19, Turborepo, Source of Truth (/sot), Playwright Pixelmatch, SCSS</div>
     <ul>
-      <li><strong>Pixel-Perfect Execution:</strong> Translated complex, design-heavy Figma layouts into clean, semantic markup with exact typography scales, color palettes, and responsive breakpoints.</li>
-      <li><strong>Source of Truth (SOT) Pages:</strong> Developed core standardized SOT page templates serving as the structural blueprint for academic documentation and student notices.</li>
-      <li><strong>Cross-Browser Precision:</strong> Ensured 100% responsiveness with zero visual regressions across all modern browsers (Chrome, Safari, Edge, Firefox).</li>
+      <li><strong>Dedicated Source of Truth (/sot) Component Gallery:</strong> Architected the in-app /sot showroom rendering real production components wrapped in design token inspectors, preventing component drift from British university standards.</li>
+      <li><strong>Automated Visual Regression Testing:</strong> Setup CI-gated design-parity workflows utilizing Playwright, Pixelmatch, and Sharp to enforce pixel-perfect fidelity against Figma specifications.</li>
+      <li><strong>Modern Monorepo Architecture:</strong> Contributed inside a Turborepo monorepo setup running Next.js 15 and React 19 with modular core and UI packages.</li>
     </ul>
   </div>
 </div>
