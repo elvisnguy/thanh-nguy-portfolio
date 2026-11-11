@@ -1,4 +1,5 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { useScrollProgress } from './hooks/useScrollProgress';
 import { useLanguage } from './hooks/useLanguage';
 import { useTheme } from './hooks/useTheme';
@@ -57,7 +58,7 @@ export default function App() {
         <ExperienceSection lang={lang} />
       </main>
 
-      {/* Footer */}
+      {/* Footer with Public Visitor Counter */}
       <Footer lang={lang} />
 
       {/* Floating Back to Top */}
@@ -85,6 +86,9 @@ export default function App() {
           />
         </Suspense>
       )}
+
+      {/* Vercel Official Web Analytics (zero perf impact, privacy-friendly) */}
+      <Analytics />
     </div>
   );
 }

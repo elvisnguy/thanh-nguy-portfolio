@@ -3,6 +3,7 @@ import { Mail, Phone } from 'lucide-react';
 import { FaLinkedinIn } from 'react-icons/fa';
 import { Language } from '../../hooks/useLanguage';
 import { TRANSLATIONS } from '../../data/translations';
+import { VisitorCounter } from '../ui/VisitorCounter';
 
 interface FooterProps {
   lang: Language;
@@ -55,6 +56,11 @@ export function Footer({ lang }: FooterProps) {
           <span>{lang === 'vi' ? 'TP. Hồ Chí Minh' : 'Ho Chi Minh City'}</span>
           <span>&bull;</span>
           <span>Remote / Hybrid</span>
+        </div>
+
+        {/* Public Visitor Counter Badge */}
+        <div className="mt-6 flex justify-center">
+          <VisitorCounter lang={lang} />
         </div>
       </div>
 
