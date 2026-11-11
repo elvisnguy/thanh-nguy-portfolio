@@ -110,7 +110,7 @@ export function Header({
             onClick={toggleLanguage}
             className="flex items-center gap-1 sm:gap-1.5 px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-full text-xs font-bold bg-neutral-100 hover:bg-neutral-200 dark:bg-[#1a1a1a] dark:hover:bg-[#252525] border border-neutral-300 dark:border-[#383838] transition-all ios-press text-neutral-900 dark:text-white shadow-sm ring-1 ring-black/5 dark:ring-white/5 cursor-pointer shrink-0"
             title={lang === 'en' ? "Chuyển sang Tiếng Việt" : "Switch to English"}
-            aria-label="Switch Language"
+            aria-label={lang === 'en' ? "EN - Switch Language" : "VI - Switch Language"}
           >
             {lang === 'en' ? (
               <>

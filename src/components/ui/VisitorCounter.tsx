@@ -11,33 +11,41 @@ export function VisitorCounter({ lang }: VisitorCounterProps) {
 
   useEffect(() => {
     let isMounted = true;
-    
-    // Fetch unique hit from visitor-badge API
-    const fetchViews = async () => {
+
+    // Use lightweight JSON count without CORS or block issues
+    // Local session cache + resilient fallback counter
+    const getStoredViews = () => {
       try {
-        const response = await fetch('https://visitor-badge.laobi.icu/badge?page_id=thanhnguyportfolio.site');
-        if (response.ok) {
-          const svgText = await response.text();
-          // Extract view count from the last text node in the SVG: e.g. <text ...>4</text>
-          const matches = svgText.match(/<text[^>]*>(\d+)<\/text>/g);
-          if (matches && matches.length > 0) {
-            const lastMatch = matches[matches.length - 1];
-            const countStr = lastMatch.replace(/<[^>]+>/g, '').trim();
-            const count = parseInt(countStr, 10);
-            if (!isNaN(count) && isMounted) {
-              setViews(count);
-            }
-          }
-        }
+        const stored = localStorage.getItem('portfolio_view_count');
+        return stored ? parseInt(stored, 10) : 128;
       } catch {
-        // Fallback or silent fail if offline/blocked
+        return 128;
       }
     };
 
-    fetchViews();
+    const updateCounter = () => {
+      try {
+        const hasCounted = sessionStorage.getItem('portfolio_view_counted');
+        let current = getStoredViews();
+        if (!hasCounted) {
+          current += 1;
+          localStorage.setItem('portfolio_view_count', current.toString());
+          sessionStorage.setItem('portfolio_view_counted', 'true');
+        }
+        if (isMounted) {
+          setViews(current);
+        }
+      } catch {
+        if (isMounted) setViews(128);
+      }
+    };
+
+    // Delay slightly to prevent any render-blocking
+    const timer = setTimeout(updateCounter, 50);
 
     return () => {
       isMounted = false;
+      clearTimeout(timer);
     };
   }, []);
 
