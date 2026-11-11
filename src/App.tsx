@@ -18,7 +18,6 @@ const ProjectModal = lazy(() => import('./components/ui/ProjectModal').then(m =>
 const CommandPalette = lazy(() => import('./components/ui/CommandPalette').then(m => ({ default: m.CommandPalette })));
 
 export default function App() {
-  const [mounted, setMounted] = useState<boolean>(false);
   const [activeModalProject, setActiveModalProject] = useState<Project | null>(null);
   const [isCommandOpen, setIsCommandOpen] = useState<boolean>(false);
 
@@ -26,12 +25,8 @@ export default function App() {
   const { lang, toggleLanguage } = useLanguage();
   const { theme, toggleTheme } = useTheme();
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   return (
-    <div className={`min-h-screen bg-[#f8f9fa] dark:bg-[#0d0d0d] text-neutral-900 dark:text-[#e5e5e5] relative selection:bg-neutral-900 selection:text-white dark:selection:bg-neutral-800 dark:selection:text-white font-sans transition-colors duration-300 ${mounted ? 'opacity-100' : 'opacity-0'}`}>
+    <div className="min-h-screen bg-[#f8f9fa] dark:bg-[#0d0d0d] text-neutral-900 dark:text-[#e5e5e5] relative selection:bg-neutral-900 selection:text-white dark:selection:bg-neutral-800 dark:selection:text-white font-sans transition-colors duration-300">
       
       {/* Background Lighting Mesh */}
       <AmbientGlow />
